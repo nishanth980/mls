@@ -47470,3 +47470,34 @@ ActionController::RoutingError (No route matches [GET] "/assets/top_back.jpg"):
 
 Started GET "/assets/bg.png" for 127.0.0.1 at 2014-07-09 18:29:56 +0530
 Served asset /bg.png - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/nishu/mls_realestate/mls/config/routes.rb:8)
+Compiled jquery.js  (2ms)  (pid 21038)
+Compiled jquery_ujs.js  (0ms)  (pid 21038)
+Compiled twitter/bootstrap/bootstrap-transition.js  (0ms)  (pid 21038)
+Compiled twitter/bootstrap/bootstrap-alert.js  (0ms)  (pid 21038)
+Compiled twitter/bootstrap/bootstrap-modal.js  (0ms)  (pid 21038)
+Compiled twitter/bootstrap/bootstrap-dropdown.js  (0ms)  (pid 21038)
+Compiled twitter/bootstrap/bootstrap-scrollspy.js  (0ms)  (pid 21038)
+Compiled twitter/bootstrap/bootstrap-tab.js  (0ms)  (pid 21038)
+Compiled twitter/bootstrap/bootstrap-tooltip.js  (0ms)  (pid 21038)
+Compiled twitter/bootstrap/bootstrap-popover.js  (0ms)  (pid 21038)
+Compiled twitter/bootstrap/bootstrap-button.js  (0ms)  (pid 21038)
+Compiled twitter/bootstrap/bootstrap-collapse.js  (0ms)  (pid 21038)
+Compiled twitter/bootstrap/bootstrap-carousel.js  (0ms)  (pid 21038)
+Compiled twitter/bootstrap/bootstrap-typeahead.js  (0ms)  (pid 21038)
+Compiled twitter/bootstrap/bootstrap-affix.js  (0ms)  (pid 21038)
+Compiled twitter/bootstrap.js  (112ms)  (pid 21038)
+Compiled bootstrap.js  (96ms)  (pid 21038)
+Compiled homes.js  (1ms)  (pid 21038)
+Compiled roles.js  (0ms)  (pid 21038)
+Compiled application.js  (326ms)  (pid 21038)
+Compiled bootstrap_and_overrides.css  (1101ms)  (pid 21038)
+Warning. Error encountered while saving cache /home/nishu/mls_realestate/mls/tmp/cache/sass/740e9d3c84c9af83357d8730711be40e8c8aff1b/homes.css.scssc: can't dump anonymous class #<Class:0x000000030ae530>
+Compiled homes.css  (24ms)  (pid 21038)
+Compiled main.css  (0ms)  (pid 21038)
+Warning. Error encountered while saving cache /home/nishu/mls_realestate/mls/tmp/cache/sass/740e9d3c84c9af83357d8730711be40e8c8aff1b/roles.css.scssc: can't dump anonymous class #<Class:0x000000030ae530>
+Compiled roles.css  (2ms)  (pid 21038)
+Warning. Error encountered while saving cache /home/nishu/mls_realestate/mls/tmp/cache/sass/740e9d3c84c9af83357d8730711be40e8c8aff1b/scaffolds.css.scssc: can't dump anonymous class #<Class:0x000000030ae530>
+Compiled scaffolds.css  (12ms)  (pid 21038)
+Compiled application.css  (1210ms)  (pid 21038)

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mls</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="login">	
+<h3><%if current_user%><%= link_to "logout", destroy_user_session_path, :method => :delete %><%end %>
+<div id="imge"></div>
+<%= yield %>
+</div>
+</div>
+
+</body>
+</html>
+<style type="text/css">
+.wrapper {
+  margin: 0 auto;
+  width: 430px;
+}
+.login {
+  width: 100%;
+  text-align: center;
+   margin-top: 120px;
+}
+.login h2{font-size: 20px; text-shadow: 1px 1px 2px rgba(150, 150, 150, 1); text-transform: uppercase;line-height: 25px;}
+.login .input-style{float:left; width: 100%;}
+.login .input-style label{
+	display: inline-block;
+    margin-right: 0%;
+    text-align: left;
+    width: 20%;
+    vertical-align: middle;
+}
+.login .input-style input{
+	-webkit-box-shadow: inset 0px 0px 5px 0px rgba(50, 50, 50, 0.3);
+	-moz-box-shadow:    inset 0px 0px 5px 0px rgba(50, 50, 50, 0.3);
+	box-shadow:         inset 0px 0px 5px 0px rgba(50, 50, 50, 0.3);}
+.login form {
+	padding:20px 0;
+	  background: none repeat scroll 0 0 #FFFFFF;
+	  border-radius: 10px;
+	  float: left;
+}
+body{background:url("/assets/bg.png") no-repeat; background-size: cover;}
+
+.remember{ 
+	font-size: 12px;
+    font-weight: normal;
+    line-height: 20px;
+    float: left;
+  	margin-left: 147px;
+  	width: 65%;
+}
+.remember input{ float: left;}
+.remember label {
+  display: inline-block;
+  float: left;
+  margin-left: 10px;
+  font-size: inherit;
+}
+.remember a{
+text-decoration: underline; margin-left: 8px; 
+	}
+.signin-btn{float: left;}
+.signin-btn input, .signin-btn a {
+  background: #feccb1; /* Old browsers */
+background: -moz-linear-gradient(top,  #feccb1 0%, #f17432 50%, #ea5507 51%, #fb955e 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#feccb1), color-stop(50%,#f17432), color-stop(51%,#ea5507), color-stop(100%,#fb955e)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #feccb1 0%,#f17432 50%,#ea5507 51%,#fb955e 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #feccb1 0%,#f17432 50%,#ea5507 51%,#fb955e 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #feccb1 0%,#f17432 50%,#ea5507 51%,#fb955e 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #feccb1 0%,#f17432 50%,#ea5507 51%,#fb955e 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feccb1', endColorstr='#fb955e',GradientType=0 ); /* IE6-9 */
+  border: 1px solid #E06C3A;
+  color: #FFFFFF;
+  font-weight: bold;
+  padding: 6px 25px;
+  text-transform: uppercase;
+  text-decoration: none;
+  float: left;
+  font-size: 14px;
+    font-weight: normal;
+    line-height: 18px;
+}
+.btn-style{margin-left: 147px; float: left; margin-top: 8px;
+
+}
+</style>

@@ -1,0 +1,26 @@
+<%- model_class = Home -%>
+<div class="page-header">
+  <h1>Welcome <%= "#{current_user.email}" %></h1>
+</div>
+
+<% if current_user.role.present? && current_user.role.name=="admin"%>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone Number</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.first_name%>&nbsp;<%= user.last_name%></td>
+        <td><%= user.email %></td>
+        <td><%= user.phone_number %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% end %>

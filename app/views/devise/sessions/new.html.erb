@@ -1,0 +1,23 @@
+
+
+<div class="wrapper">
+	<div class="login">
+<h2>Please login here</h2>
+
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <div class="input-style"><%= f.label :email %><%= f.email_field :email, :autofocus => true %></div>
+
+  <div class="input-style"><%= f.label :password %><%= f.password_field :password %></div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div class="remember"><%= f.check_box :remember_me %><%= f.label :remember_me %>|<%= link_to "Forgot your password?", new_password_path(resource_name) %></div>
+  <% end -%>
+<div class="btn-style">
+  <div class="signin-btn" style="margin-right:10px;"><%= f.submit "Sign in" %></div><div class="signin-btn"><%= link_to "Sign up", new_registration_path(resource_name) %></div></div>
+<% end %>
+
+
+</div>
+</div>
+
+

@@ -1,0 +1,43 @@
+<h2>Import Template</h2>  
+<% debugger %>
+<%= form_tag import_templates_path, multipart: true do %>  
+  <%= file_field_tag :file %>  
+  <input type="button" value="submit", id="dup_value">
+<div style ="display: none">  <%= submit_tag "Import" , :id => "submit_id" %> </div>
+<% end %>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+ <link rel="stylesheet" href="/resources/demos/style.css">
+<script>
+$(document).ready(function(){
+$("#dup_value").click(function(){
+<% if @template.present? %>
+
+    $( "#dialog-confirm" ).dialog({
+      resizable: false,
+      height:240,
+      modal: true,
+      buttons: {
+        "Import": function() {
+          $("#submit_id").click();
+          $( this ).dialog( "close" );
+        },
+        Cancel: function() {
+          $( this ).dialog( "close" );
+        }
+      }
+    });
+
+<% else %>
+$("#submit_id").click();
+
+<% end %>
+});
+});
+</script>
+
+<div id="dialog-confirm" title="Template already Imported!">
+ <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>You have already uploaded a template and mapped its columns.Do you want to delete the mapping and upload a new template?</p>
+
+</div>

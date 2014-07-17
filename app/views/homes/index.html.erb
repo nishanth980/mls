@@ -2,7 +2,7 @@
 <div class="page-header">
   <h1>Welcome <%= "#{current_user.email}" %></h1>
 </div>
-
+<% @time=DateTime.now.day %>
 <% if current_user.role.present? && current_user.role.name=="admin"%>
 <table class="table table-striped">
   <thead>
@@ -10,17 +10,24 @@
       <th>Name</th>
       <th>Email</th>
       <th>Phone Number</th>
+      <th>Users who haven't uploaded Csv</th> 
     </tr>
   </thead>
   <tbody>
     <% @users.each do |user| %>
+    <% @in = Information.find(:last, :conditions => ["user_id = ?", "#{user.id}"]) %>
       <tr>
         <td><%= user.first_name%>&nbsp;<%= user.last_name%></td>
         <td><%= user.email %></td>
         <td><%= user.phone_number %> </td>
+        <td><%= user.phone_number %> </td>
+        
       </tr>
     <% end %>
   </tbody>
 </table>
+<% else %>
+<%= link_to "Import a template", templates_path%>&nbsp;&nbsp;
+<%= link_to "Import data", information_index_path %>
 
 <% end %>

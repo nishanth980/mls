@@ -128,8 +128,8 @@ end
 
 
 def export
- @v=Information.where(:user_id => "15", :exel_id => @@exel_id)
- @info = @v.order(:created_at)
+ @v=Information.where(:exel_id => @@exel_id)
+ @info = @v.order(:mls_id)
 
   respond_to do |format|
       format.html

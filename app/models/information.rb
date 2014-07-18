@@ -6,7 +6,7 @@ belongs_to :user
      def self.to_csv(options = {})
     CSV.generate(options) do |csv|
       csv << column_names
-      where(:user_id => "15" ).each do |information|
+      all.each do |information|
         csv << information.attributes.values_at(*column_names)        
       end
     end

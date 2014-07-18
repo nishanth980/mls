@@ -11,9 +11,48 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140709070755) do
+ActiveRecord::Schema.define(:version => 20140715083906) do
 
   create_table "homes", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "information", :force => true do |t|
+    t.string   "mls_id"
+    t.string   "mls_name"
+    t.string   "sale_type"
+    t.string   "listing_status"
+    t.string   "apn"
+    t.string   "address"
+    t.string   "suite"
+    t.string   "street"
+    t.string   "street_name"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "sale_date"
+    t.string   "sale_price"
+    t.string   "concession_amount"
+    t.string   "owner"
+    t.string   "days_on_market"
+    t.string   "original_listing_price"
+    t.string   "original_listing_date"
+    t.string   "current_listing_price"
+    t.string   "current_listing_date"
+    t.string   "contact_date"
+    t.string   "financing_type"
+    t.string   "listing_status_date"
+    t.string   "public_remarks"
+    t.string   "agent_remarks"
+    t.string   "user_id"
+    t.string   "exel_id"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+  end
+
+  create_table "master_tables", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -23,6 +62,39 @@ ActiveRecord::Schema.define(:version => 20140709070755) do
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "templates", :force => true do |t|
+    t.string   "mls_id"
+    t.string   "mls_name"
+    t.string   "sale_type"
+    t.string   "listing_status"
+    t.string   "apn"
+    t.string   "address"
+    t.string   "suite"
+    t.string   "street"
+    t.string   "street_name"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "sale_date"
+    t.string   "sale_price"
+    t.string   "concession_amount"
+    t.string   "owner"
+    t.string   "days_on_market"
+    t.string   "original_listing_price"
+    t.string   "original_listing_date"
+    t.string   "current_listing_price"
+    t.string   "current_listing_date"
+    t.string   "contact_date"
+    t.string   "financing_type"
+    t.string   "listing_status_date"
+    t.string   "public_remarks"
+    t.string   "agent_remarks"
+    t.string   "user_id"
+    t.string   "exel_id"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
   end
 
   create_table "users", :force => true do |t|

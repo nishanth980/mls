@@ -1,5 +1,28 @@
 Mls::Application.routes.draw do
 
+
+
+  resources :information do
+  collection { post :import }
+  collection { get :export }
+  end
+
+
+  resources :master_tables
+
+
+  resources :templates do
+  collection do
+   post "import"   
+   get "combined_form"
+   post "save_form"
+   get "edit_import"
+  end
+
+  end
+
+
+
   resources :roles
 
 
@@ -62,5 +85,5 @@ Mls::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id))(.:format)'
+   match ':controller(/:action(/:id))(.:format)'
 end

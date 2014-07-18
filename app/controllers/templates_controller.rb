@@ -11,8 +11,7 @@ class TemplatesController < ApplicationController
 
   def import  
   @template = Template.find_by_user_id("#{current_user.id}")     
-  @template.present?
-  @template.delete
+  @template.delete if @template.present?  
   @file = params[:file]  
   @csv_data = CSV.read @file.path   
   @csv_data=@csv_data.flatten  

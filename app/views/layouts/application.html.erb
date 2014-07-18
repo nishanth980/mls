@@ -7,15 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<header style="float: left; width: 100%;">
-  <div class="logo" style="float: left;">
+<header>
+  <div class="wrapper">
+  <div class="logo">
       <a href ="#"><img src="/assets/zone-appraisers.png"></a>
   </div>
-  <h2 style="float: right; padding-right: 10px;"><%if current_user%><%= link_to "logout", destroy_user_session_path, :method => :delete %><%end %></h2>
-</header>		
-
+  <h2 class="logout-btn" style="float: right; padding-right: 10px;"><%if current_user%><%= link_to "logout", destroy_user_session_path, :method => :delete %><%end %></h2>
+</div>
+</header>
+<section>  
 <%= yield %>
-
+</section>
 </body>
 </html>
 
@@ -26,10 +28,28 @@ body{background:#fff;}
   margin: 0 auto;
   width: 1200px;
 }
+
+header{
+  float: left;
+  width: 100%;
+  border-bottom: 1px solid #999;
+}
+header .logo{
+  float: left;
+  height: 110px;
+}
+header .logo img{
+  width: 230px;
+ }
+section{
+  float: left;
+  width: 100%;
+}
+
 .login {
-  width: 430px;
+  width: 500px;
   text-align: center;
-   margin: 120px auto;
+  margin: 80px auto;
 }
 
 .import_data {
@@ -39,8 +59,8 @@ body{background:#fff;}
 
 .data_table{
   margin: 0 auto;
-overflow: scroll;
-width: 1200px;}
+  overflow: scroll;
+  width: 1200px;}
 
 .data_table th {
   background: none repeat scroll 0 0 #FFFFFF;
@@ -49,43 +69,51 @@ width: 1200px;}
 }
 
 
-.data_table td{background: none repeat scroll 0 0 #DDDDDD;
-border: 1px solid #999999;
-.login {
-  width: 100%;
-  text-align: center;
-   margin-top: 120px;
+.data_table td{
+  background: none repeat scroll 0 0 #DDDDDD;
+  border: 1px solid #999999;
 }
-.login h2{font-size: 20px; text-shadow: 1px 1px 2px rgba(150, 150, 150, 1); text-transform: uppercase;line-height: 25px;}
-.import_data h2{font-size: 20px; text-shadow: 1px 1px 2px rgba(150, 150, 150, 1); text-transform: uppercase;line-height: 25px;}
-.login .input-style{float:left; width: 100%;}
+
+.login h2, .temp-con h2, .import_data h2{
+  font-size: 20px; 
+  text-shadow: 1px 1px 2px rgba(150, 150, 150, 1); 
+  text-transform: uppercase;line-height: 25px;
+}
+
+.login .input-style{
+  float:left; 
+  width: 100%;
+}
 .login .input-style label{
 	display: inline-block;
-    margin-right: 0%;
-    text-align: left;
-    width: 20%;
-    vertical-align: middle;
+  margin-right: 0%;
+  text-align: left;
+  width: 20%;
+ vertical-align: middle;
 }
 .login .input-style input{
 	-webkit-box-shadow: inset 0px 0px 5px 0px rgba(50, 50, 50, 0.3);
 	-moz-box-shadow:    inset 0px 0px 5px 0px rgba(50, 50, 50, 0.3);
-	box-shadow:         inset 0px 0px 5px 0px rgba(50, 50, 50, 0.3);}
+	box-shadow:         inset 0px 0px 5px 0px rgba(50, 50, 50, 0.3);
+}
 .login form {
 	padding:20px 0;
-	  background: none repeat scroll 0 0 #FFFFFF;
-	  border-radius: 10px;
-	  float: left;
+	background: none repeat scroll 0 0 #eee;
+  border-radius: 10px;
+	float: left;
 }
 
 .remember{ 
 	font-size: 12px;
-    font-weight: normal;
-    line-height: 20px;
-    float: left;
-  	margin-left: 147px;
-  	width: 65%;
+  font-weight: normal;
+  line-height: 20px;
+  float: left;
+  margin-left: 147px;
+  width: 65%;
 }
-.remember input{ float: left;}
+.remember input{ 
+  float: left;
+}
 .remember label {
   display: inline-block;
   float: left;
@@ -93,19 +121,22 @@ border: 1px solid #999999;
   font-size: inherit;
 }
 .remember a{
-text-decoration: underline; margin-left: 8px; 
-	}
-.signin-btn{float: left;}
-.signin-btn input, .signin-btn a {
-  background: #feccb1; /* Old browsers */
-background: -moz-linear-gradient(top,  #feccb1 0%, #f17432 50%, #ea5507 51%, #fb955e 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#feccb1), color-stop(50%,#f17432), color-stop(51%,#ea5507), color-stop(100%,#fb955e)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  #feccb1 0%,#f17432 50%,#ea5507 51%,#fb955e 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  #feccb1 0%,#f17432 50%,#ea5507 51%,#fb955e 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  #feccb1 0%,#f17432 50%,#ea5507 51%,#fb955e 100%); /* IE10+ */
-background: linear-gradient(to bottom,  #feccb1 0%,#f17432 50%,#ea5507 51%,#fb955e 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feccb1', endColorstr='#fb955e',GradientType=0 ); /* IE6-9 */
-  border: 1px solid #E06C3A;
+  text-decoration: underline; margin-left: 8px; 
+}
+.signin-btn{
+  float: left;
+}
+.signin-btn input, .signin-btn a, .logout-btn a, .submit-btn, .update-btn{
+ background: #1e5799; /* Old browsers */
+background: -moz-linear-gradient(top,  #1e5799 0%, #7db9e8 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1e5799), color-stop(100%,#7db9e8)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #1e5799 0%,#7db9e8 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #1e5799 0%,#7db9e8 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #1e5799 0%,#7db9e8 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #1e5799 0%,#7db9e8 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+
+  border: 1px solid #1e5799;
   color: #FFFFFF;
   font-weight: bold;
   padding: 6px 25px;
@@ -115,8 +146,43 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feccb1', end
   font-size: 14px;
     font-weight: normal;
     line-height: 18px;
+    -webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
 }
-.btn-style{margin-left: 147px; float: left; margin-top: 8px;
+.btn-style{
+  margin-left: 147px; 
+  float: left; 
+  margin-top: 8px;
+}
+.tempt-style{
+  overflow-x: hidden; 
+  height: 450px;
+}
 
+.tempt-style form, .temp1-style form{
+  background: none repeat scroll 0 0 #DDDDDD;
+  padding: 30px;
+}
+
+.tempt-style form input, .temp1-style form input{
+  margin-right:15px;
+
+}
+
+.temp1-style{
+  margin-top:20px;
+  overflow-x: hidden; 
+  height: 500px;
+}
+.submit-btn{
+  padding: 6px 20px;
+  font-size: 11px;
+  float:none;
+  float: right;
+}
+.temp-con{
+  margin: 0px auto; 
+  width: 550px;
 }
 </style>

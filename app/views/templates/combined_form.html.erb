@@ -1,4 +1,6 @@
 	<div class="wrapper">
+		<div class="temp-con">
+			<div class="temp1-style">
 	<%= form_tag save_form_templates_path,:method => :post, :id => "template_form" do %>
 	<div class="test">
 
@@ -29,7 +31,8 @@
 <p><%= text_field_tag "temp25", @x[24] ,:id=>"temp1" %>&nbsp;<%= select_tag "tab25",options_for_select(MasterTable.all.collect {|val| [@a=val.name, val.name]}),:id=>"select25" %> </p>
 <p><%= text_field_tag "temp26", @x[25] ,:id=>"temp1" %>&nbsp;<%= select_tag "tab26",options_for_select(MasterTable.all.collect {|val| [@a=val.name, val.name]}),:id=>"select26" %> </p>
 
-<%= submit_tag "Enter" , :id=>"sub" %><br/>
+<%= submit_tag "Submit" , :id=>"sub" %><br/>
 <% end %>
+</div>
 </div>
 </div>

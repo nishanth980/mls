@@ -1,6 +1,7 @@
 <%- model_class = Home -%>
+<div class="welcome-container">
 <div class="page-header">
-  <h1>Welcome <%= "#{current_user.email}" %></h1>
+  <h1>Welcome <%= "#{current_user.first_name}" %>&nbsp; <%"#{current_user.last_name}" %></h1>
 </div>
 <% @time=DateTime.now.day %>
 <% if current_user.role.present? && current_user.role.name=="admin"%>
@@ -27,7 +28,8 @@
   </tbody>
 </table>
 <% else %>
-<%= link_to "Import a template", templates_path%>&nbsp;&nbsp;
-<%= link_to "Import data", information_index_path %>
+<%= link_to "Field Mapping", templates_path%>&nbsp;&nbsp;
+<%= link_to "Data Conversion", information_index_path %>
 
 <% end %>
+</div>

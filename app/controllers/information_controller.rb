@@ -107,7 +107,7 @@ def import
     i=1
     while i< @count do 
       @i = i
-      
+debugger      
    @check= Information.create(@f => @csv_data[i][0], @s => @csv_data[i][1],@t =>  @csv_data[i][2] ,@fo =>  @csv_data[i][3],@fi =>  @csv_data[i][4],@si =>  @csv_data[i][5],@se =>  @csv_data[i][6],@ei =>  @csv_data[i][7],@ni =>  @csv_data[i][8],@te => @csv_data[i][9],@le =>  @csv_data[i][10],@twe =>  @csv_data[i][11],@thir =>  @csv_data[i][12],@fou =>  @csv_data[i][13],@fif =>  @csv_data[i][14],@six =>  @csv_data[i][15],@seven =>  @csv_data[i][16],@eigh =>  @csv_data[i][17],@nine =>  @csv_data[i][18],@twenty =>  @csv_data[i][19],@twenone =>  @csv_data[i][20],@twetwo =>  @csv_data[i][21],@twethre =>  @csv_data[i][22],@twenfou =>  @csv_data[i][23],@twenfiv =>  @csv_data[i][24],@twensi =>  @csv_data[i][25],:user_id => current_user.id,:exel_id => @exel_id)  
     i=i+1
     end

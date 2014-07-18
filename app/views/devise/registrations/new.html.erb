@@ -20,12 +20,13 @@
   <div class="input-style"><%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %></div>
 
-  <div class="input-style"><%= f.label :phone_number %>
-  <%= f.text_field :phone_number %></div>
-<div class="btn-style">
-  <div class="signin-btn" style="margin-right:10px;"><%= f.submit "Sign up" %></div>
-  <div class="signin-btn"><%= link_to "Sign in", new_session_path(resource_name) %></div>
+  
+
+<div class="btn-style" style="float: right; margin-right: 14px; margin-top: 8px;">
+  <div class="signin-btn" style="margin-right:10px;"><%= f.submit "Submit" %></div>  
 </div>
+<div style="float: left; width: 100%; padding: 10px; font-weight: bold; font-style: italic; font-size: 15px;"><%= link_to "Click here to sign in...", new_session_path(resource_name) %></div>
 <% end %>
+
 </div>
 </div>

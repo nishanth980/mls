@@ -1,8 +1,9 @@
-<h2>Import Template</h2>  
-<% debugger %>
+<div class="temp-con">
+  <h3 style="margin-left:-326px"><%= link_to "Home", homes_path %></h3>
+<h2>Field mapping</h2>  
 <%= form_tag import_templates_path, multipart: true do %>  
-  <%= file_field_tag :file %>  
-  <input type="button" value="submit", id="dup_value">
+  <%= file_field_tag :file  %>  
+  <input type="button" value="submit", id="dup_value" class="submit-btn">
 <div style ="display: none">  <%= submit_tag "Import" , :id => "submit_id" %> </div>
 <% end %>
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -37,8 +38,47 @@ $("#submit_id").click();
 });
 </script>
 
-
 <div id="dialog-confirm" title="Template already Imported!">
- <p class="display:none"><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>You have already uploaded a template and mapped its columns.Do you want to delete the mapping and upload a new template?</p>
+ <p style="display:none"><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>You have already uploaded a template and mapped its columns.Do you want to delete the mapping and upload a new template?</p>
 
 </div>
+<% if @x.present? %>
+<h4>Map Attributes</h4>
+<div class="tempt-style">
+
+  
+  <%= form_tag edit_import_templates_path,:method => :post, :id => "template_form" do %>
+
+<p><%= text_field_tag "temp1", @x.mls_id ,:id=>"temp1" %>&nbsp;<%= select_tag "tab1",options_for_select(MasterTable.all.collect {|val| [@a=val.name, val.name]}),:prompt =>@u[0],:id=>"select1" %> </p>
+<p><%= text_field_tag "temp2", @x.mls_name ,:id=>"temp2" %>&nbsp;<%= select_tag "tab2",options_for_select(MasterTable.all.collect {|val| [@a=val.name, val.name]}),:prompt =>@u[1],:id=>"select2" %> </p>
+<p><%= text_field_tag "temp3", @x.sale_type ,:id=>"temp3" %>&nbsp;<%= select_tag "tab3",options_for_select(MasterTable.all.collect {|val| [@a=val.name, val.name]}),:prompt =>@u[2],:id=>"select3" %> </p>
+<p><%= text_field_tag "temp4", @x.listing_status ,:id=>"temp4" %>&nbsp;<%= select_tag "tab4",options_for_select(MasterTable.all.collect {|val| [@a=val.name, val.name]}),:prompt =>@u[3],:id=>"select4" %> </p>
+<p><%= text_field_tag "temp5", @x.apn ,:id=>"temp5" %>&nbsp;<%= select_tag "tab5",options_for_select(MasterTable.all.collect {|val| [@a=val.name, val.name]}),:prompt =>@u[4],:id=>"select5" %> </p>
+<p><%= text_field_tag "temp6", @x.address ,:id=>"temp6" %>&nbsp;<%= select_tag "tab6",options_for_select(MasterTable.all.collect {|val| [@a=val.name, val.name]}),:prompt =>@u[5],:id=>"select6" %> </p>
+<p><%= text_field_tag "temp7", @x.suite ,:id=>"temp7" %>&nbsp;<%= select_tag "tab7",options_for_select(MasterTable.all.collect {|val| [@a=val.name, val.name]}),:prompt =>@u[6],:id=>"select7" %> </p>
+<p><%= text_field_tag "temp8", @x.street ,:id=>"temp8" %>&nbsp;<%= select_tag "tab8",options_for_select(MasterTable.all.collect {|val| [@a=val.name, val.name]}),:prompt =>@u[7],:id=>"select8" %> </p>
+<p><%= text_field_tag "temp9", @x.street_name ,:id=>"temp9" %>&nbsp;<%= select_tag "tab9",options_for_select(MasterTable.all.collect {|val| [@a=val.name, val.name]}),:prompt =>@u[8],:id=>"select9" %> </p>
+<p><%= text_field_tag "temp10", @x.city ,:id=>"temp10" %>&nbsp;<%= select_tag "tab10",options_for_select(MasterTable.all.collect {|val| [@a=val.name, val.name]}),:prompt =>@u[9],:id=>"select10" %> </p>
+<p><%= text_field_tag "temp11", @x.state ,:id=>"temp11" %>&nbsp;<%= select_tag "tab11",options_for_select(MasterTable.all.collect {|val| [@a=val.name, val.name]}),:prompt =>@u[10],:id=>"select11" %> </p>
+<p><%= text_field_tag "temp12", @x.zip ,:id=>"temp12" %>&nbsp;<%= select_tag "tab12",options_for_select(MasterTable.all.collect {|val| [@a=val.name, val.name]}),:prompt =>@u[11],:id=>"select12" %> </p>
+<p><%= text_field_tag "temp13", @x.sale_date ,:id=>"temp13" %>&nbsp;<%= select_tag "tab13",options_for_select(MasterTable.all.collect {|val| [@a=val.name, val.name]}),:prompt =>@u[12],:id=>"select13" %> </p>
+<p><%= text_field_tag "temp14", @x.sale_price ,:id=>"temp14" %>&nbsp;<%= select_tag "tab14",options_for_select(MasterTable.all.collect {|val| [@a=val.name, val.name]}),:prompt =>@u[13],:id=>"select14" %> </p>
+<p><%= text_field_tag "temp15", @x.concession_amount ,:id=>"temp15" %>&nbsp;<%= select_tag "tab15",options_for_select(MasterTable.all.collect {|val| [@a=val.name, val.name]}),:prompt =>@u[14],:id=>"select15" %> </p>
+<p><%= text_field_tag "temp16", @x.owner ,:id=>"temp16" %>&nbsp;<%= select_tag "tab16",options_for_select(MasterTable.all.collect {|val| [@a=val.name, val.name]}),:prompt =>@u[15],:id=>"select16" %> </p>
+<p><%= text_field_tag "temp17", @x.days_on_market ,:id=>"temp17" %>&nbsp;<%= select_tag "tab17",options_for_select(MasterTable.all.collect {|val| [@a=val.name, val.name]}),:prompt =>@u[16],:id=>"select17" %> </p>
+<p><%= text_field_tag "temp18", @x.original_listing_price ,:id=>"temp18" %>&nbsp;<%= select_tag "tab18",options_for_select(MasterTable.all.collect {|val| [@a=val.name, val.name]}),:prompt =>@u[17],:id=>"select18" %> </p>
+<p><%= text_field_tag "temp19", @x.original_listing_date ,:id=>"temp19" %>&nbsp;<%= select_tag "tab19",options_for_select(MasterTable.all.collect {|val| [@a=val.name, val.name]}),:prompt =>@u[18],:id=>"select19" %> </p>
+<p><%= text_field_tag "temp20", @x.current_listing_price ,:id=>"temp20" %>&nbsp;<%= select_tag "tab20",options_for_select(MasterTable.all.collect {|val| [@a=val.name, val.name]}),:prompt =>@u[19],:id=>"select20" %> </p>
+<p><%= text_field_tag "temp21", @x.current_listing_date ,:id=>"temp21" %>&nbsp;<%= select_tag "tab21",options_for_select(MasterTable.all.collect {|val| [@a=val.name, val.name]}),:prompt =>@u[20],:id=>"select21" %> </p>
+<p><%= text_field_tag "temp22", @x.contact_date ,:id=>"temp22" %>&nbsp;<%= select_tag "tab22",options_for_select(MasterTable.all.collect {|val| [@a=val.name, val.name]}),:prompt =>@u[21],:id=>"select22" %> </p>
+<p><%= text_field_tag "temp23", @x.financing_type ,:id=>"temp23" %>&nbsp;<%= select_tag "tab23",options_for_select(MasterTable.all.collect {|val| [@a=val.name, val.name]}),:prompt =>@u[22],:id=>"select23" %> </p>
+<p><%= text_field_tag "temp24", @x.listing_status_date ,:id=>"temp24" %>&nbsp;<%= select_tag "tab24",options_for_select(MasterTable.all.collect {|val| [@a=val.name, val.name]}),:prompt =>@u[23],:id=>"select24" %> </p>
+<p><%= text_field_tag "temp25", @x.public_remarks ,:id=>"temp25" %>&nbsp;<%= select_tag "tab25",options_for_select(MasterTable.all.collect {|val| [@a=val.name, val.name]}),:prompt =>@u[24],:id=>"select25" %> </p>
+<p><%= text_field_tag "temp26", @x.agent_remarks ,:id=>"temp26" %>&nbsp;<%= select_tag "tab26",options_for_select(MasterTable.all.collect {|val| [@a=val.name, val.name]}),:prompt =>@u[25],:id=>"select26" %> </p>
+
+
+<%= submit_tag "Update" , :class=>"update-btn", :id=>"sub" %><br/>
+<% end %>
+  </div>
+  </div>
+  <% end %>

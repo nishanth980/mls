@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  master_table_values: MyString
+  template_header_values: MyString
+  user_id: 1
+
+two:
+  master_table_values: MyString
+  template_header_values: MyString
+  user_id: 1

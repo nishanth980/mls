@@ -1,5 +1,6 @@
 <div class="temp-con">
   <h3 style="margin-left:-326px"><%= link_to "Home", homes_path %></h3>
+  <%= notice %>
 <h2>Field mapping</h2>  
 <%= form_tag import_templates_path, multipart: true do %>  
   <%= file_field_tag :file  %>  

@@ -4,7 +4,7 @@ class Information < ActiveRecord::Base
 belongs_to :user
 
      def self.to_csv(options = {})
-    exclude_columns = ["id","user_id", "exel_id","created_at","updated_at"]
+    exclude_columns = ["id","user_id", "exel_id"]
     @orignal_headers = column_names - exclude_columns
 
       CSV.generate(options) do |csv|

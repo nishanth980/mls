@@ -17,99 +17,98 @@ def import
   @data_headers = @csv_data[0]     
   @template_headers=Template.find_by_user_id("#{current_user.id}")    
   @template_headers.attributes.each{|i| @a = i}
-  @array = @template_headers.attributes.each{|i| @a << i}
+  @array = @template_headers.attributes.each{|i| @a << i}  
   @final_array = @array.invert
-  if @final_array.has_key?(@data_headers[0])
+  @first_column = []
+  if @data_headers.include? @final_array.keys[1]
     @first_column = []
-    @first_column << @final_array[@data_headers[0]]     
+    @first_column << @final_array[@final_array.keys[1]]     
   end
-  if @final_array.has_key?(@data_headers[1])
-  @first_column << @final_array[@data_headers[1]]   
+  if @data_headers.include? @final_array.keys[2]
+  @first_column << @final_array[@final_array.keys[2]]   
   end
-    if @final_array.has_key?(@data_headers[2])
-  @first_column << @final_array[@data_headers[2]]   
+    if @data_headers.include? @final_array.keys[3]
+  @first_column << @final_array[@final_array.keys[3]]   
   end
-    if @final_array.has_key?(@data_headers[3])
-  @first_column << @final_array[@data_headers[3]]   
+    if @data_headers.include? @final_array.keys[4]
+  @first_column << @final_array[@final_array.keys[4]]   
   end
-    if @final_array.has_key?(@data_headers[4])
-  @first_column << @final_array[@data_headers[4]]   
+    if @data_headers.include? @final_array.keys[5]
+  @first_column << @final_array[@final_array.keys[5]]  
   end
-    if @final_array.has_key?(@data_headers[5])
-  @first_column << @final_array[@data_headers[5]]   
+    if @data_headers.include? @final_array.keys[6]
+  @first_column << @final_array[@final_array.keys[6]] 
   end
-    if @final_array.has_key?(@data_headers[6])
-  @first_column << @final_array[@data_headers[6]]   
+    if @data_headers.include? @final_array.keys[7]
+  @first_column << @final_array[@final_array.keys[7]]   
   end
-    if @final_array.has_key?(@data_headers[7])
-  @first_column << @final_array[@data_headers[7]]   
+    if @data_headers.include? @final_array.keys[8]
+  @first_column << @final_array[@final_array.keys[8]] 
   end
-    if @final_array.has_key?(@data_headers[8])
-  @first_column << @final_array[@data_headers[8]]   
+    if @data_headers.include? @final_array.keys[9]
+  @first_column << @final_array[@final_array.keys[9]]   
   end
-    if @final_array.has_key?(@data_headers[9])
-  @first_column << @final_array[@data_headers[9]]   
+    if @data_headers.include? @final_array.keys[10]
+  @first_column << @final_array[@final_array.keys[10]] 
   end
-    if @final_array.has_key?(@data_headers[10])
-  @first_column << @final_array[@data_headers[10]]   
+    if @data_headers.include? @final_array.keys[11]
+  @first_column << @final_array[@final_array.keys[11]]   
   end
-    if @final_array.has_key?(@data_headers[11])
-  @first_column << @final_array[@data_headers[11]]   
+    if @data_headers.include? @final_array.keys[12]
+  @first_column << @final_array[@final_array.keys[12]]  
   end
-    if @final_array.has_key?(@data_headers[12])
-  @first_column << @final_array[@data_headers[12]]   
+    if @data_headers.include? @final_array.keys[13]
+  @first_column << @final_array[@final_array.keys[13]] 
   end
-    if @final_array.has_key?(@data_headers[13])
-  @first_column << @final_array[@data_headers[13]]   
+    if @data_headers.include? @final_array.keys[14]
+  @first_column << @final_array[@final_array.keys[14]] 
   end
-    if @final_array.has_key?(@data_headers[14])
-  @first_column << @final_array[@data_headers[14]]   
+    if @data_headers.include? @final_array.keys[15]
+  @first_column << @final_array[@final_array.keys[15]] 
   end
-  if @final_array.has_key?(@data_headers[15])
-  @first_column << @final_array[@data_headers[15]]   
+  if @data_headers.include? @final_array.keys[16]
+  @first_column << @final_array[@final_array.keys[16]] 
   end
-  if @final_array.has_key?(@data_headers[16])
-  @first_column << @final_array[@data_headers[16]]   
+  if @data_headers.include? @final_array.keys[17]
+  @first_column << @final_array[@final_array.keys[17]] 
   end
-    if @final_array.has_key?(@data_headers[17])
-  @first_column << @final_array[@data_headers[17]]   
+    if @data_headers.include? @final_array.keys[18]
+  @first_column << @final_array[@final_array.keys[18]] 
   end
-    if @final_array.has_key?(@data_headers[18])
-  @first_column << @final_array[@data_headers[18]]   
+    if @data_headers.include? @final_array.keys[19]
+  @first_column << @final_array[@final_array.keys[19]]   
   end
-    if @final_array.has_key?(@data_headers[19])
-  @first_column << @final_array[@data_headers[19]]   
+    if @data_headers.include? @final_array.keys[20]
+  @first_column << @final_array[@final_array.keys[20]] 
   end
-    if @final_array.has_key?(@data_headers[20])
-  @first_column << @final_array[@data_headers[20]]   
+    if @data_headers.include? @final_array.keys[21]
+  @first_column << @final_array[@final_array.keys[21]]   
   end
-    if @final_array.has_key?(@data_headers[21])
-  @first_column << @final_array[@data_headers[21]]   
+    if @data_headers.include? @final_array.keys[22]
+  @first_column << @final_array[@final_array.keys[22]]  
   end
-    if @final_array.has_key?(@data_headers[22])
-  @first_column << @final_array[@data_headers[22]]   
+    if @data_headers.include? @final_array.keys[23]
+  @first_column << @final_array[@final_array.keys[23]] 
   end
-    if @final_array.has_key?(@data_headers[23])
-  @first_column << @final_array[@data_headers[23]]   
+    if @data_headers.include? @final_array.keys[24]
+  @first_column << @final_array[@final_array.keys[24]]   
   end
-    if @final_array.has_key?(@data_headers[24])
-  @first_column << @final_array[@data_headers[24]]   
+    if @data_headers.include? @final_array.keys[25]
+  @first_column << @final_array[@final_array.keys[25]]  
   end
-    if @final_array.has_key?(@data_headers[25])
-  @first_column << @final_array[@data_headers[25]]   
+    if @data_headers.include? @final_array.keys[26]
+  @first_column << @final_array[@final_array.keys[26]] 
   end
  
   @f,@s,@t,@fo,@fi,@si,@se,@ei,@ni,@te,@le,@twe,@thir,@fou,@fif,@six,@seven,@eigh,@nine,@twenty,@twenone,@twetwo,@twethre,@twenfou,@twenfiv,@twensi=@first_column[0],@first_column[1],@first_column[2],@first_column[3],@first_column[4],@first_column[5],@first_column[6],@first_column[7],@first_column[8],@first_column[9],@first_column[10],@first_column[11],@first_column[12],@first_column[13],@first_column[14],@first_column[15],@first_column[16],@first_column[17],@first_column[18],@first_column[19],@first_column[20],@first_column[21],@first_column[22],@first_column[23],@first_column[24],@first_column[25]
 
 @time = Time.now
 @exel_id = current_user.id.to_s + "-" + @time.to_s
-  @count = @csv_data.count
-    i=1
-    while i< @count do 
-      @i = i
-debugger      
-   @check= Information.create(@f => @csv_data[i][0], @s => @csv_data[i][1],@t =>  @csv_data[i][2] ,@fo =>  @csv_data[i][3],@fi =>  @csv_data[i][4],@si =>  @csv_data[i][5],@se =>  @csv_data[i][6],@ei =>  @csv_data[i][7],@ni =>  @csv_data[i][8],@te => @csv_data[i][9],@le =>  @csv_data[i][10],@twe =>  @csv_data[i][11],@thir =>  @csv_data[i][12],@fou =>  @csv_data[i][13],@fif =>  @csv_data[i][14],@six =>  @csv_data[i][15],@seven =>  @csv_data[i][16],@eigh =>  @csv_data[i][17],@nine =>  @csv_data[i][18],@twenty =>  @csv_data[i][19],@twenone =>  @csv_data[i][20],@twetwo =>  @csv_data[i][21],@twethre =>  @csv_data[i][22],@twenfou =>  @csv_data[i][23],@twenfiv =>  @csv_data[i][24],@twensi =>  @csv_data[i][25],:user_id => current_user.id,:exel_id => @exel_id)  
-    i=i+1
+       
+debugger
+   CSV.foreach(@file.path, :headers => true, :col_sep => ',') do |row|
+
+   @check= Information.create(@f => row[@array[@f]] , @s => row[@array[@s]],@t =>  row[@array[@t]] ,@fo =>  row[@array[@fo]],@fi =>  row[@array[@fi]],@si =>  row[@array[@si]],@se =>  row[@array[@se]],@ei =>  row[@array[@ei]],@ni =>  row[@array[@ni]],@te => row[@array[@te]],@le =>  row[@array[@le]],@twe =>  row[@array[@twe]],@thir =>  row[@array[@thir]],@fou =>  row[@array[@fou]],@fif =>  row[@array[@fif]],@six =>  row[@array[@six]],@seven =>  row[@array[@seven]],@eigh =>  row[@array[@eigh]],@nine =>  row[@array[@nine]],@twenty =>  row[@array[@twenty]],@twenone =>  row[@array[@twenone]],@twetwo =>  row[@array[@twetwo]],@twethre =>  row[@array[@twethre]],@twenfou =>  row[@array[@twenfou]],@twenfiv =>  row[@array[@twenfiv]],@twensi =>  row[@array[@twensi]],:user_id => current_user.id,:exel_id => @exel_id)  
     end
    
   redirect_to information_index_path(:exel_id => @exel_id, :template_headers => @template_headers)

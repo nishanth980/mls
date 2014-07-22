@@ -327,3 +327,85 @@ Compiled scaffolds.css  (11ms)  (pid 7350)
 Warning. Error encountered while saving cache /home/nishu/Desktop/m/mls/tmp/cache/sass/531015848ce2c94dd1240f352356eadbc1f8fba7/templates.css.scssc: can't dump anonymous class #<Class:0x000000038b4658>
 Compiled templates.css  (2ms)  (pid 7350)
 Compiled application.css  (1202ms)  (pid 7350)
+Connecting to database specified by database.yml
+Compiled jquery.js  (47ms)  (pid 12802)
+Compiled jquery_ujs.js  (0ms)  (pid 12802)
+Compiled twitter/bootstrap/bootstrap-transition.js  (0ms)  (pid 12802)
+Compiled twitter/bootstrap/bootstrap-alert.js  (0ms)  (pid 12802)
+Compiled twitter/bootstrap/bootstrap-modal.js  (0ms)  (pid 12802)
+Compiled twitter/bootstrap/bootstrap-dropdown.js  (0ms)  (pid 12802)
+Compiled twitter/bootstrap/bootstrap-scrollspy.js  (0ms)  (pid 12802)
+Compiled twitter/bootstrap/bootstrap-tab.js  (0ms)  (pid 12802)
+Compiled twitter/bootstrap/bootstrap-tooltip.js  (0ms)  (pid 12802)
+Compiled twitter/bootstrap/bootstrap-popover.js  (0ms)  (pid 12802)
+Compiled twitter/bootstrap/bootstrap-button.js  (0ms)  (pid 12802)
+Compiled twitter/bootstrap/bootstrap-collapse.js  (0ms)  (pid 12802)
+Compiled twitter/bootstrap/bootstrap-carousel.js  (0ms)  (pid 12802)
+Compiled twitter/bootstrap/bootstrap-typeahead.js  (0ms)  (pid 12802)
+Compiled twitter/bootstrap/bootstrap-affix.js  (0ms)  (pid 12802)
+Compiled twitter/bootstrap.js  (139ms)  (pid 12802)
+Compiled bootstrap.js  (102ms)  (pid 12802)
+Compiled data.js  (1ms)  (pid 12802)
+Compiled homes.js  (0ms)  (pid 12802)
+Compiled information.js  (0ms)  (pid 12802)
+Compiled master_tables.js  (1ms)  (pid 12802)
+Compiled roles.js  (1ms)  (pid 12802)
+Compiled templates.js  (1ms)  (pid 12802)
+Compiled application.js  (420ms)  (pid 12802)
+Compiled bootstrap_and_overrides.css  (1327ms)  (pid 12802)
+Warning. Error encountered while saving cache /home/nishu/Desktop/m/mls/tmp/cache/sass/531015848ce2c94dd1240f352356eadbc1f8fba7/data.css.scssc: can't dump anonymous class #<Class:0x00000004d3bba8>
+Compiled data.css  (294ms)  (pid 12802)
+Warning. Error encountered while saving cache /home/nishu/Desktop/m/mls/tmp/cache/sass/531015848ce2c94dd1240f352356eadbc1f8fba7/homes.css.scssc: can't dump anonymous class #<Class:0x00000004d3bba8>
+Compiled homes.css  (5ms)  (pid 12802)
+Warning. Error encountered while saving cache /home/nishu/Desktop/m/mls/tmp/cache/sass/531015848ce2c94dd1240f352356eadbc1f8fba7/information.css.scssc: can't dump anonymous class #<Class:0x00000004d3bba8>
+Compiled information.css  (3ms)  (pid 12802)
+Warning. Error encountered while saving cache /home/nishu/Desktop/m/mls/tmp/cache/sass/531015848ce2c94dd1240f352356eadbc1f8fba7/master_tables.css.scssc: can't dump anonymous class #<Class:0x00000004d3bba8>
+Compiled master_tables.css  (3ms)  (pid 12802)
+Warning. Error encountered while saving cache /home/nishu/Desktop/m/mls/tmp/cache/sass/531015848ce2c94dd1240f352356eadbc1f8fba7/roles.css.scssc: can't dump anonymous class #<Class:0x00000004d3bba8>
+Compiled roles.css  (3ms)  (pid 12802)
+Warning. Error encountered while saving cache /home/nishu/Desktop/m/mls/tmp/cache/sass/531015848ce2c94dd1240f352356eadbc1f8fba7/scaffolds.css.scssc: can't dump anonymous class #<Class:0x00000004d3bba8>
+Compiled scaffolds.css  (12ms)  (pid 12802)
+Warning. Error encountered while saving cache /home/nishu/Desktop/m/mls/tmp/cache/sass/531015848ce2c94dd1240f352356eadbc1f8fba7/templates.css.scssc: can't dump anonymous class #<Class:0x00000004d3bba8>
+Compiled templates.css  (2ms)  (pid 12802)
+Compiled application.css  (1823ms)  (pid 12802)
+Connecting to database specified by database.yml
+Compiled jquery.js  (50ms)  (pid 12802)
+Compiled jquery_ujs.js  (0ms)  (pid 12802)
+Compiled twitter/bootstrap/bootstrap-transition.js  (0ms)  (pid 12802)
+Compiled twitter/bootstrap/bootstrap-alert.js  (0ms)  (pid 12802)
+Compiled twitter/bootstrap/bootstrap-modal.js  (0ms)  (pid 12802)
+Compiled twitter/bootstrap/bootstrap-dropdown.js  (0ms)  (pid 12802)
+Compiled twitter/bootstrap/bootstrap-scrollspy.js  (0ms)  (pid 12802)
+Compiled twitter/bootstrap/bootstrap-tab.js  (0ms)  (pid 12802)
+Compiled twitter/bootstrap/bootstrap-tooltip.js  (0ms)  (pid 12802)
+Compiled twitter/bootstrap/bootstrap-popover.js  (0ms)  (pid 12802)
+Compiled twitter/bootstrap/bootstrap-button.js  (0ms)  (pid 12802)
+Compiled twitter/bootstrap/bootstrap-collapse.js  (0ms)  (pid 12802)
+Compiled twitter/bootstrap/bootstrap-carousel.js  (0ms)  (pid 12802)
+Compiled twitter/bootstrap/bootstrap-typeahead.js  (0ms)  (pid 12802)
+Compiled twitter/bootstrap/bootstrap-affix.js  (0ms)  (pid 12802)
+Compiled twitter/bootstrap.js  (148ms)  (pid 12802)
+Compiled bootstrap.js  (96ms)  (pid 12802)
+Compiled data.js  (1ms)  (pid 12802)
+Compiled homes.js  (0ms)  (pid 12802)
+Compiled information.js  (1ms)  (pid 12802)
+Compiled master_tables.js  (1ms)  (pid 12802)
+Compiled roles.js  (1ms)  (pid 12802)
+Compiled templates.js  (1ms)  (pid 12802)
+Compiled application.js  (410ms)  (pid 12802)
+Compiled bootstrap_and_overrides.css  (1246ms)  (pid 12802)
+Warning. Error encountered while saving cache /home/nishu/Desktop/m/mls/tmp/cache/sass/531015848ce2c94dd1240f352356eadbc1f8fba7/data.css.scssc: can't dump anonymous class #<Class:0x000000044031a8>
+Compiled data.css  (9ms)  (pid 12802)
+Warning. Error encountered while saving cache /home/nishu/Desktop/m/mls/tmp/cache/sass/531015848ce2c94dd1240f352356eadbc1f8fba7/homes.css.scssc: can't dump anonymous class #<Class:0x000000044031a8>
+Compiled homes.css  (2ms)  (pid 12802)
+Warning. Error encountered while saving cache /home/nishu/Desktop/m/mls/tmp/cache/sass/531015848ce2c94dd1240f352356eadbc1f8fba7/information.css.scssc: can't dump anonymous class #<Class:0x000000044031a8>
+Compiled information.css  (2ms)  (pid 12802)
+Warning. Error encountered while saving cache /home/nishu/Desktop/m/mls/tmp/cache/sass/531015848ce2c94dd1240f352356eadbc1f8fba7/master_tables.css.scssc: can't dump anonymous class #<Class:0x000000044031a8>
+Compiled master_tables.css  (2ms)  (pid 12802)
+Warning. Error encountered while saving cache /home/nishu/Desktop/m/mls/tmp/cache/sass/531015848ce2c94dd1240f352356eadbc1f8fba7/roles.css.scssc: can't dump anonymous class #<Class:0x000000044031a8>
+Compiled roles.css  (2ms)  (pid 12802)
+Warning. Error encountered while saving cache /home/nishu/Desktop/m/mls/tmp/cache/sass/531015848ce2c94dd1240f352356eadbc1f8fba7/scaffolds.css.scssc: can't dump anonymous class #<Class:0x000000044031a8>
+Compiled scaffolds.css  (11ms)  (pid 12802)
+Warning. Error encountered while saving cache /home/nishu/Desktop/m/mls/tmp/cache/sass/531015848ce2c94dd1240f352356eadbc1f8fba7/templates.css.scssc: can't dump anonymous class #<Class:0x000000044031a8>
+Compiled templates.css  (4ms)  (pid 12802)
+Compiled application.css  (1370ms)  (pid 12802)

@@ -110,7 +110,7 @@ debugger
 
    @check= Information.create(@f => row[@array[@f]] , @s => @final_array.keys[2],@t =>  row[@array[@t]] ,@fo =>  row[@array[@fo]],@fi =>  row[@array[@fi]],@si =>  row[@array[@si]],@se =>  row[@array[@se]],@ei =>  row[@array[@ei]],@ni =>  row[@array[@ni]],@te => row[@array[@te]],@le =>  row[@array[@le]],@twe =>  row[@array[@twe]],@thir =>  row[@array[@thir]],@fou =>  row[@array[@fou]],@fif =>  row[@array[@fif]],@six =>  row[@array[@six]],@seven =>  row[@array[@seven]],@eigh =>  row[@array[@eigh]],@nine =>  row[@array[@nine]],@twenty =>  row[@array[@twenty]],@twenone =>  row[@array[@twenone]],@twetwo =>  row[@array[@twetwo]],@twethre =>  row[@array[@twethre]],@twenfou =>  row[@array[@twenfou]],@twenfiv =>  row[@array[@twenfiv]],@twensi =>  row[@array[@twensi]],:user_id => current_user.id,:exel_id => @exel_id)  
     end
-   
+  flash[:notice] = 'Successfully saved the data'
   redirect_to information_index_path(:exel_id => @exel_id, :template_headers => @template_headers)
    
 end

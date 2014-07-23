@@ -12,13 +12,14 @@ class TemplatesController < ApplicationController
     end
   end
 
-  def import  
+  def import
+    
   @template = Template.find_by_user_id("#{current_user.id}")     
   @template.delete if @template.present?  
   @file = params[:file]  
   @data = CSV.read @file.path     
   @@csv_data= @data[0]  
-    
+  
   redirect_to combined_form_templates_path(:csv_data =>  @@csv_data)
 
  end
@@ -116,14 +117,17 @@ instance_variable_set("@t#{k}", params[t_vl])
 
 instance_variable_set("@tab#{k}", params[tab_vl])
 k= k+1
-debugger
+
 end  
  
  v =v +1
 
 end 
  @user_id=current_user.id
-@tem=Template.create(@tab1=>@t1,@tab2=>@t2,@tab3=>@t3,@tab4=>@t4,@tab5=>@t5,@tab6=>@t6,@tab7=>@t7,@tab8=>@t8,@tab9=>@t9,@tab10=>@t10,@tab11=>@t11,@tab12=>@t12,@tab13=>@t13,@tab14=>@t14,@tab15=>@t15,@tab16=>@t16,@tab17=>@t17,@tab18=>@t18,@tab19=>@t19,@tab20=>@t20,@tab21=>@t21,@tab22=>@t22,@tab23=>@t23,@tab24=>@t24,@tab25=>@t25,@tab26=>@t26,:user_id => @user_id)
+ @mls_name = params[:mls_name]
+ @mls_name_user = params[:mls_name_user]
+
+@tem=Template.create(@tab1=>@t1,@tab2=>@t2,@tab3=>@t3,@tab4=>@t4,@tab5=>@t5,@tab6=>@t6,@tab7=>@t7,@tab8=>@t8,@tab9=>@t9,@tab10=>@t10,@tab11=>@t11,@tab12=>@t12,@tab13=>@t13,@tab14=>@t14,@tab15=>@t15,@tab16=>@t16,@tab17=>@t17,@tab18=>@t18,@tab19=>@t19,@tab20=>@t20,@tab21=>@t21,@tab22=>@t22,@tab23=>@t23,@tab24=>@t24,@tab25=>@t25,@mls_name=>@mls_name_user,:user_id => @user_id)
 redirect_to templates_path   
 
 

@@ -14,14 +14,14 @@
 <script>
 $(document).ready(function(){
 $("#dup_value").click(function(){
-<% if @template.present? %>
+<% if @x.present? %>
 
     $( "#dialog-confirm" ).dialog({
       resizable: false,
       height:240,
       modal: true,
       buttons: {
-        "Import": function() {
+        "Yes": function() {
           $("#submit_id").click();
           $( this ).dialog( "close" );
         },
@@ -40,17 +40,16 @@ $("#submit_id").click();
 </script>
 
 <div id="dialog-confirm" title="Template already Imported!">
- <p style="display:none"><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>You have already uploaded a template and mapped its columns.Do you want to delete the mapping and upload a new template?</p>
+ <p ><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>You have already uploaded a template and mapped its columns.Do you want to delete the mapping and upload a new template?</p>
 
 </div>
 <% if @x.present? %>
 <h4>Map Attributes</h4>
 <div class="tempt-style">
-
   
   <%= form_tag edit_import_templates_path,:method => :post, :id => "template_form" do %>
 
-<p><%= text_field_tag "temp1", @x.mls_id ,:id=>"temp1" %>&nbsp;<%= select_tag "tab1",options_for_select(MasterTable.all.collect {|val| [@a=val.name, val.name]}),:prompt =>@u[0],:id=>"select1" %> </p>
+<p><%= text_field_tag "temp1", @x.mls_id ,:id=>"temp1" %>&nbsp;<%= select_tag "tab1",options_for_select(MasterTable.all.collect {|val| [@a=val.name, val.name]}),:prompt =>@u[1],:id=>"select1" %> </p>
 <p><%= text_field_tag "temp2", @x.mls_name ,:id=>"temp2" %>&nbsp;<%= select_tag "tab2",options_for_select(MasterTable.all.collect {|val| [@a=val.name, val.name]}),:prompt =>@u[1],:id=>"select2" %> </p>
 <p><%= text_field_tag "temp3", @x.sale_type ,:id=>"temp3" %>&nbsp;<%= select_tag "tab3",options_for_select(MasterTable.all.collect {|val| [@a=val.name, val.name]}),:prompt =>@u[2],:id=>"select3" %> </p>
 <p><%= text_field_tag "temp4", @x.listing_status ,:id=>"temp4" %>&nbsp;<%= select_tag "tab4",options_for_select(MasterTable.all.collect {|val| [@a=val.name, val.name]}),:prompt =>@u[3],:id=>"select4" %> </p>

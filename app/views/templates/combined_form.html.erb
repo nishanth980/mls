@@ -1,23 +1,82 @@
 	<div class="wrapper">
 		<div class="temp-con">
-			<div class="temp1-style">
+			<div class="temp1-style">				
+			<% @m=MasterTable.all %>
+		    <% @mname = MasterTable.find(2) %>
+		    <% @m.delete(@mname) %>
 	<%= form_tag save_form_templates_path(@pio),:method => :post, :id => "template_form" do %>
+	<%= text_field_tag "mls_name", @mname.name %> <%= text_field_tag "mls_name_user" %> 
 	<% c= 1 %>
-	<% while c <= @x.count do %>
+	<% while c <= @m.count do %>
 	
-	<% @x.each do |i| %>
+	<% @m.each do |i| %>
 	<div class="test">
-  <p><%= text_field_tag "temp_#{c}", "#{i}" ,:id=>"temp_#{c}" %>&nbsp;<%= select_tag "tab_#{c}",options_for_select(MasterTable.all.collect {|val| [@a=val.name, val.name]}),:prompt =>"please select a value",:id=>"tab_#{c}" %> </p>
+<p><%= text_field_tag "tab_#{c}", "#{i.name}" ,:id=>"tab_#{c}" %>&nbsp;<%= select_tag "temp_#{c}",options_for_select(@x.collect {|val| val}),:prompt =>"please select a value",:id=>"temp_#{c}" %> </p>
 
 <% c= c+1 %>
-<% end %>
-<% end %>
-<%= submit_tag "Submit" %><br/>
-<% end %>
 </div>
+<% end %>
+<% end %>
+<div style="display:none"><%= submit_tag "Submit", :id=>"origin_sub" %><br/></div>
+<input type="button" id="sub" value="Submit">
+<% end %>
+
 </div>
 </div>
 </div>
 
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script>
+$(document).ready(function(){
+$("#sub").click(function(){
 
+if( $("#mls_name_user").val() != ""  && $("#temp_1").val() != ""  && $("#temp_2").val() != ""  && $("#temp_3").val() != ""  && $("#temp_5").val() != ""  && $("#temp_6").val() != ""  && $("#temp_7").val() != ""  && $("#temp_8").val() != ""  && $("#temp_9").val() != ""  && $("#temp_10").val() != ""   && $("#temp_11").val() != ""   && $("#temp_12").val() != ""   && $("#temp_13").val() != ""  ){
+
+	var table_val = new Array();
+	var i = 0;
+ $(".test select").each(function() {
+     table_val[i] = $(this).val();
+    
+    i++;
+});
+alert('check');
+
+
+ var x;
+ var listingVal = '';
+for(i=0;i<table_val.length;i++){
+	x=table_val[i];
+	if(table_val[i] != ''){
+	for(var j=i+1;j<table_val.length;j++){
+	if(x==table_val[j]) {
+		listingVal += table_val[j]+",";
+	 }
+	}
+}
+}
+if(listingVal != ""){
+    alert("You have a repeated mapping of the values:"+listingVal);
+}
+else{
+$("#origin_sub").click();
+}
+
+}
+
+else
+{
+
+alert("you have not mapped the mandatory fields");
+
+}
+
+});
+
+});
+
+
+
+
+</script>
 

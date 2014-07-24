@@ -2,7 +2,7 @@
 		<div class="temp-con">
 			<div class="temp1-style">				
 			<% @m=MasterTable.all %>
-		    <% @mname = MasterTable.find(2) %>
+		    <% @mname = MasterTable.find(9) %>
 		    <% @m.delete(@mname) %>
 	<%= form_tag save_form_templates_path(@pio),:method => :post, :id => "template_form" do %>
 	<%= text_field_tag "mls_name", @mname.name %> <%= text_field_tag "mls_name_user" %> 

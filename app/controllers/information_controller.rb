@@ -154,7 +154,8 @@ def import
   end
     if @data_headers.include? @final_array.keys[25]
   @first_column << @final_array[@final_array.keys[25]]  
-
+  else
+  @first_column << ""
   end
     if @data_headers.include? @final_array.keys[26]
   @first_column << @final_array[@final_array.keys[26]] 
@@ -275,7 +276,7 @@ elsif  @twenfiv == "" && @twensi == ""
   redirect_to (information_index_path(:exel_id => @exel_id, :template_headers => @template_headers))
   return
 elsif  @twensi == ""
-  debugger
+  
 CSV.foreach(@file.path, :headers => true, :col_sep => ',') do |row|
 
    @check= Information.create(@f => row[@array[@f]] , @s => @final_array.keys[2],@t =>  row[@array[@t]] ,@fo =>  row[@array[@fo]],@fi =>  row[@array[@fi]],@si =>  row[@array[@si]],@se =>  row[@array[@se]],@ei =>  row[@array[@ei]],@ni =>  row[@array[@ni]],@te => row[@array[@te]],@le =>  row[@array[@le]],@twe =>  row[@array[@twe]],@thir =>  row[@array[@thir]],@fou =>  row[@array[@fou]],@fif =>  row[@array[@fif]],@six =>  row[@array[@six]],@seven =>  row[@array[@seven]],@eigh =>  row[@array[@eigh]],@nine =>  row[@array[@nine]],@twenty =>  row[@array[@twenty]],@twenone =>  row[@array[@twenone]],@twetwo =>  row[@array[@twetwo]],@twethre =>  row[@array[@twethre]],@twenfou =>  row[@array[@twenfou]],@twenfiv =>  row[@array[@twenfiv]],:user_id => current_user.id,:exel_id => @exel_id)  
@@ -284,15 +285,237 @@ CSV.foreach(@file.path, :headers => true, :col_sep => ',') do |row|
   redirect_to (information_index_path(:exel_id => @exel_id, :template_headers => @template_headers))
   return
 
+elsif @fi == "" && @fif == "" && @six == "" && @seven == "" && @eigh == "" && @nine == "" && @twenty == "" && @twenone == "" && @twetwo == "" && @twethre == "" && @twenfou == "" && @twenfiv == ""
+
+ CSV.foreach(@file.path, :headers => true, :col_sep => ',') do |row|
+
+   @check= Information.create(@f => row[@array[@f]] , @s => @final_array.keys[2],@t =>  row[@array[@t]] ,@fo =>  row[@array[@fo]],@si =>  row[@array[@si]],@se =>  row[@array[@se]],@ei =>  row[@array[@ei]],@ni =>  row[@array[@ni]],@te => row[@array[@te]],@le =>  row[@array[@le]],@twe =>  row[@array[@twe]],@thir =>  row[@array[@thir]],@fou =>  row[@array[@fou]],@twensi =>  row[@array[@twensi]],:user_id => current_user.id,
+    :exel_id => @exel_id)  
+    end
+  flash[:notice] = 'Successfully saved the data'
+  redirect_to (information_index_path(:exel_id => @exel_id, :template_headers => @template_headers))
+  return
+
+elsif @fif == "" && @six == "" && @seven == "" && @eigh == "" && @nine == "" && @twenty == "" && @twenone == "" && @twetwo == "" && @twethre == "" && @twenfou == "" && @twenfiv == ""
+
+  CSV.foreach(@file.path, :headers => true, :col_sep => ',') do |row|
+
+   @check= Information.create(@f => row[@array[@f]] , @s => @final_array.keys[2],@t =>  row[@array[@t]] ,@fo =>  row[@array[@fo]],@fi =>  row[@array[@fi]],@si =>  row[@array[@si]],@se =>  row[@array[@se]],@ei =>  row[@array[@ei]],@ni =>  row[@array[@ni]],@te => row[@array[@te]],@le =>  row[@array[@le]],@twe =>  row[@array[@twe]],@thir =>  row[@array[@thir]],@fou =>  row[@array[@fou]],@twensi =>  row[@array[@twensi]],:user_id => current_user.id,:exel_id => @exel_id)  
+    end
+  flash[:notice] = 'Successfully saved the data'
+  redirect_to (information_index_path(:exel_id => @exel_id, :template_headers => @template_headers))
+  return
+
+
+elsif @six == "" && @seven == "" && @eigh == "" && @nine == "" && @twenty == "" && @twenone == "" && @twetwo == "" && @twethre == "" && @twenfou == "" && @twenfiv == ""
+
+ CSV.foreach(@file.path, :headers => true, :col_sep => ',') do |row|
+
+   @check= Information.create(@f => row[@array[@f]] , @s => @final_array.keys[2],@t =>  row[@array[@t]] ,@fo =>  row[@array[@fo]],@fi =>  row[@array[@fi]],@si =>  row[@array[@si]],@se =>  row[@array[@se]],@ei =>  row[@array[@ei]],@ni =>  row[@array[@ni]],@te => row[@array[@te]],@le =>  row[@array[@le]],@twe =>  row[@array[@twe]],@thir =>  row[@array[@thir]],@fou =>  row[@array[@fou]],@fif =>  row[@array[@fif]],@twensi =>  row[@array[@twensi]],:user_id => current_user.id,:exel_id => @exel_id)     
+    end
+  flash[:notice] = 'Successfully saved the data'
+  redirect_to (information_index_path(:exel_id => @exel_id, :template_headers => @template_headers))
+  return
+
+elsif @seven == "" && @eigh == "" && @nine == "" && @twenty == "" && @twenone == "" && @twetwo == "" && @twethre == "" && @twenfou == "" && @twenfiv == ""
+
+ CSV.foreach(@file.path, :headers => true, :col_sep => ',') do |row|
+
+   @check= Information.create(@f => row[@array[@f]] , @s => @final_array.keys[2],@t =>  row[@array[@t]] ,@fo =>  row[@array[@fo]],@fi =>  row[@array[@fi]],@si =>  row[@array[@si]],@se =>  row[@array[@se]],@ei =>  row[@array[@ei]],@ni =>  row[@array[@ni]],@te => row[@array[@te]],@le =>  row[@array[@le]],@twe =>  row[@array[@twe]],@thir =>  row[@array[@thir]],@fou =>  row[@array[@fou]],@fif =>  row[@array[@fif]],@six =>  row[@array[@six]],@twensi =>  row[@array[@twensi]],:user_id => current_user.id,:exel_id => @exel_id)  
+    end
+  flash[:notice] = 'Successfully saved the data'
+  redirect_to (information_index_path(:exel_id => @exel_id, :template_headers => @template_headers))
+  return
+
+elsif @eigh == "" && @nine == "" && @twenty == "" && @twenone == "" && @twetwo == "" && @twethre == "" && @twenfou == "" && @twenfiv == ""
+
+ CSV.foreach(@file.path, :headers => true, :col_sep => ',') do |row|
+  @check= Information.create(@f => row[@array[@f]] , @s => @final_array.keys[2],@t =>  row[@array[@t]] ,@fo =>  row[@array[@fo]],@fi =>  row[@array[@fi]],@si =>  row[@array[@si]],@se =>  row[@array[@se]],@ei =>  row[@array[@ei]],@ni =>  row[@array[@ni]],@te => row[@array[@te]],@le =>  row[@array[@le]],@twe =>  row[@array[@twe]],@thir =>  row[@array[@thir]],@fou =>  row[@array[@fou]],@fif =>  row[@array[@fif]],@six =>  row[@array[@six]],@seven =>  row[@array[@seven]],@twensi =>  row[@array[@twensi]],:user_id => current_user.id,:exel_id => @exel_id)  
+    end
+  flash[:notice] = 'Successfully saved the data'
+  redirect_to (information_index_path(:exel_id => @exel_id, :template_headers => @template_headers))
+  return
+
+elsif @nine == "" && @twenty == "" && @twenone == "" && @twetwo == "" && @twethre == "" && @twenfou == "" && @twenfiv == ""
+
+ CSV.foreach(@file.path, :headers => true, :col_sep => ',') do |row|
+
+   @check= Information.create(@f => row[@array[@f]] , @s => @final_array.keys[2],@t =>  row[@array[@t]] ,@fo =>  row[@array[@fo]],@fi =>  row[@array[@fi]],@si =>  row[@array[@si]],@se =>  row[@array[@se]],@ei =>  row[@array[@ei]],@ni =>  row[@array[@ni]],@te => row[@array[@te]],@le =>  row[@array[@le]],@twe =>  row[@array[@twe]],@thir =>  row[@array[@thir]],@fou =>  row[@array[@fou]],@fif =>  row[@array[@fif]],@six =>  row[@array[@six]],@seven =>  row[@array[@seven]],@eigh =>  row[@array[@eigh]],@twensi =>  row[@array[@twensi]],:user_id => current_user.id,:exel_id => @exel_id)  
+    end
+  flash[:notice] = 'Successfully saved the data'
+  redirect_to (information_index_path(:exel_id => @exel_id, :template_headers => @template_headers))
+   return
+
+elsif @twenty == "" && @twenone == "" && @twetwo == "" && @twethre == "" && @twenfou == "" && @twenfiv == ""
+CSV.foreach(@file.path, :headers => true, :col_sep => ',') do |row|
+
+   @check= Information.create(@f => row[@array[@f]] , @s => @final_array.keys[2],@t =>  row[@array[@t]] ,@fo =>  row[@array[@fo]],@fi =>  row[@array[@fi]],@si =>  row[@array[@si]],@se =>  row[@array[@se]],@ei =>  row[@array[@ei]],@ni =>  row[@array[@ni]],@te => row[@array[@te]],@le =>  row[@array[@le]],@twe =>  row[@array[@twe]],@thir =>  row[@array[@thir]],@fou =>  row[@array[@fou]],@fif =>  row[@array[@fif]],@six =>  row[@array[@six]],@seven =>  row[@array[@seven]],@eigh =>  row[@array[@eigh]],@nine =>  row[@array[@nine]],@twensi =>  row[@array[@twensi]],:user_id => current_user.id,:exel_id => @exel_id)  
+    end
+  flash[:notice] = 'Successfully saved the data'
+  redirect_to (information_index_path(:exel_id => @exel_id, :template_headers => @template_headers))
+   return
+
+elsif @twenone == "" && @twetwo == "" && @twethre == "" && @twenfou == "" && @twenfiv == ""
+
+ CSV.foreach(@file.path, :headers => true, :col_sep => ',') do |row|
+
+   @check= Information.create(@f => row[@array[@f]] , @s => @final_array.keys[2],@t =>  row[@array[@t]] ,@fo =>  row[@array[@fo]],@fi =>  row[@array[@fi]],@si =>  row[@array[@si]],@se =>  row[@array[@se]],@ei =>  row[@array[@ei]],@ni =>  row[@array[@ni]],@te => row[@array[@te]],@le =>  row[@array[@le]],@twe =>  row[@array[@twe]],@thir =>  row[@array[@thir]],@fou =>  row[@array[@fou]],@fif =>  row[@array[@fif]],@six =>  row[@array[@six]],@seven =>  row[@array[@seven]],@eigh =>  row[@array[@eigh]],@nine =>  row[@array[@nine]],@twenty =>  row[@array[@twenty]],@twensi =>  row[@array[@twensi]],:user_id => current_user.id,:exel_id => @exel_id)  
+    end
+  flash[:notice] = 'Successfully saved the data'
+  redirect_to (information_index_path(:exel_id => @exel_id, :template_headers => @template_headers))
+   return
+
+elsif @twetwo == "" && @twethre == "" && @twenfou == "" && @twenfiv == ""
+
+CSV.foreach(@file.path, :headers => true, :col_sep => ',') do |row|
+
+   @check= Information.create(@f => row[@array[@f]] , @s => @final_array.keys[2],@t =>  row[@array[@t]] ,@fo =>  row[@array[@fo]],@fi =>  row[@array[@fi]],@si =>  row[@array[@si]],@se =>  row[@array[@se]],@ei =>  row[@array[@ei]],@ni =>  row[@array[@ni]],@te => row[@array[@te]],@le =>  row[@array[@le]],@twe =>  row[@array[@twe]],@thir =>  row[@array[@thir]],@fou =>  row[@array[@fou]],@fif =>  row[@array[@fif]],@six =>  row[@array[@six]],@seven =>  row[@array[@seven]],@eigh =>  row[@array[@eigh]],@nine =>  row[@array[@nine]],@twenty =>  row[@array[@twenty]],@twenone =>  row[@array[@twenone]],@twensi =>  row[@array[@twensi]],:user_id => current_user.id,:exel_id => @exel_id)  
+    end
+  flash[:notice] = 'Successfully saved the data'
+  redirect_to (information_index_path(:exel_id => @exel_id, :template_headers => @template_headers))
+   return
+
+elsif  @twethre == "" && @twenfou == "" && @twenfiv == ""
+CSV.foreach(@file.path, :headers => true, :col_sep => ',') do |row|
+
+   @check= Information.create(@f => row[@array[@f]] , @s => @final_array.keys[2],@t =>  row[@array[@t]] ,@fo =>  row[@array[@fo]],@fi =>  row[@array[@fi]],@si =>  row[@array[@si]],@se =>  row[@array[@se]],@ei =>  row[@array[@ei]],@ni =>  row[@array[@ni]],@te => row[@array[@te]],@le =>  row[@array[@le]],@twe =>  row[@array[@twe]],@thir =>  row[@array[@thir]],@fou =>  row[@array[@fou]],@fif =>  row[@array[@fif]],@six =>  row[@array[@six]],@seven =>  row[@array[@seven]],@eigh =>  row[@array[@eigh]],@nine =>  row[@array[@nine]],@twenty =>  row[@array[@twenty]],@twenone =>  row[@array[@twenone]],@twetwo =>  row[@array[@twetwo]],@twensi =>  row[@array[@twensi]],:user_id => current_user.id,:exel_id => @exel_id)  
+    end
+  flash[:notice] = 'Successfully saved the data'
+  redirect_to (information_index_path(:exel_id => @exel_id, :template_headers => @template_headers))
+   return
+
+elsif @twenfou == "" && @twenfiv == ""
+ CSV.foreach(@file.path, :headers => true, :col_sep => ',') do |row|
+
+   @check= Information.create(@f => row[@array[@f]] , @s => @final_array.keys[2],@t =>  row[@array[@t]] ,@fo =>  row[@array[@fo]],@fi =>  row[@array[@fi]],@si =>  row[@array[@si]],@se =>  row[@array[@se]],@ei =>  row[@array[@ei]],@ni =>  row[@array[@ni]],@te => row[@array[@te]],@le =>  row[@array[@le]],@twe =>  row[@array[@twe]],@thir =>  row[@array[@thir]],@fou =>  row[@array[@fou]],@fif =>  row[@array[@fif]],@six =>  row[@array[@six]],@seven =>  row[@array[@seven]],@eigh =>  row[@array[@eigh]],@nine =>  row[@array[@nine]],@twenty =>  row[@array[@twenty]],@twenone =>  row[@array[@twenone]],@twetwo =>  row[@array[@twetwo]],@twethre =>  row[@array[@twethre]],@twensi =>  row[@array[@twensi]],:user_id => current_user.id,:exel_id => @exel_id)  
+    end
+  flash[:notice] = 'Successfully saved the data'
+  redirect_to (information_index_path(:exel_id => @exel_id, :template_headers => @template_headers))
+   return
+
+elsif @twenfiv == ""
+CSV.foreach(@file.path, :headers => true, :col_sep => ',') do |row|
+
+   @check= Information.create(@f => row[@array[@f]] , @s => @final_array.keys[2],@t =>  row[@array[@t]] ,@fo =>  row[@array[@fo]],@fi =>  row[@array[@fi]],@si =>  row[@array[@si]],@se =>  row[@array[@se]],@ei =>  row[@array[@ei]],@ni =>  row[@array[@ni]],@te => row[@array[@te]],@le =>  row[@array[@le]],@twe =>  row[@array[@twe]],@thir =>  row[@array[@thir]],@fou =>  row[@array[@fou]],@fif =>  row[@array[@fif]],@six =>  row[@array[@six]],@seven =>  row[@array[@seven]],@eigh =>  row[@array[@eigh]],@nine =>  row[@array[@nine]],@twenty =>  row[@array[@twenty]],@twenone =>  row[@array[@twenone]],@twetwo =>  row[@array[@twetwo]],@twethre =>  row[@array[@twethre]],@twenfou =>  row[@array[@twenfou]],@twensi =>  row[@array[@twensi]],:user_id => current_user.id,:exel_id => @exel_id)   
+    end
+  flash[:notice] = 'Successfully saved the data'
+  redirect_to (information_index_path(:exel_id => @exel_id, :template_headers => @template_headers))
+  return
+
+elsif  @fi == "" && @fif == "" && @six == "" && @seven == "" && @eigh == "" && @nine == "" && @twenty == "" && @twenone == "" && @twetwo == "" && @twethre == "" && @twenfou == ""
+   CSV.foreach(@file.path, :headers => true, :col_sep => ',') do |row|
+
+   @check= Information.create(@f => row[@array[@f]] , @s => @final_array.keys[2],@t =>  row[@array[@t]] ,@fo =>  row[@array[@fo]],@si =>  row[@array[@si]],@se =>  row[@array[@se]],@ei =>  row[@array[@ei]],@ni =>  row[@array[@ni]],@te => row[@array[@te]],@le =>  row[@array[@le]],@twe =>  row[@array[@twe]],@thir =>  row[@array[@thir]],@fou =>  row[@array[@fou]],@twenfiv =>  row[@array[@twenfiv]],@twensi =>  row[@array[@twensi]],:user_id => current_user.id,:exel_id => @exel_id)  
+    end
+  flash[:notice] = 'Successfully saved the data'
+  redirect_to (information_index_path(:exel_id => @exel_id, :template_headers => @template_headers))
+   return
+
+ elsif @fif == "" && @six == "" && @seven == "" && @eigh == "" && @nine == "" && @twenty == "" && @twenone == "" && @twetwo == "" && @twethre == "" && @twenfou == ""
+
+CSV.foreach(@file.path, :headers => true, :col_sep => ',') do |row|
+
+   @check= Information.create(@f => row[@array[@f]] , @s => @final_array.keys[2],@t =>  row[@array[@t]] ,@fo =>  row[@array[@fo]],@fi =>  row[@array[@fi]],@si =>  row[@array[@si]],@se =>  row[@array[@se]],@ei =>  row[@array[@ei]],@ni =>  row[@array[@ni]],@te => row[@array[@te]],@le =>  row[@array[@le]],@twe =>  row[@array[@twe]],@thir =>  row[@array[@thir]],@fou =>  row[@array[@fou]],@twenfiv =>  row[@array[@twenfiv]],@twensi =>  row[@array[@twensi]],:user_id => current_user.id,:exel_id => @exel_id)  
+    end
+  flash[:notice] = 'Successfully saved the data'
+  redirect_to (information_index_path(:exel_id => @exel_id, :template_headers => @template_headers))
+   return
+
+elsif @six == "" && @seven == "" && @eigh == "" && @nine == "" && @twenty == "" && @twenone == "" && @twetwo == "" && @twethre == "" && @twenfou == ""
+
+ CSV.foreach(@file.path, :headers => true, :col_sep => ',') do |row|
+
+   @check= Information.create(@f => row[@array[@f]] , @s => @final_array.keys[2],@t =>  row[@array[@t]] ,@fo =>  row[@array[@fo]],@fi =>  row[@array[@fi]],@si =>  row[@array[@si]],@se =>  row[@array[@se]],@ei =>  row[@array[@ei]],@ni =>  row[@array[@ni]],@te => row[@array[@te]],@le =>  row[@array[@le]],@twe =>  row[@array[@twe]],@thir =>  row[@array[@thir]],@fou =>  row[@array[@fou]],@fif =>  row[@array[@fif]],@twenfiv =>  row[@array[@twenfiv]],@twensi =>  row[@array[@twensi]],:user_id => current_user.id,:exel_id => @exel_id)  
+    end
+  flash[:notice] = 'Successfully saved the data'
+  redirect_to (information_index_path(:exel_id => @exel_id, :template_headers => @template_headers))
+   return
+
+elsif @seven == "" && @eigh == "" && @nine == "" && @twenty == "" && @twenone == "" && @twetwo == "" && @twethre == "" && @twenfou == ""
+
+  CSV.foreach(@file.path, :headers => true, :col_sep => ',') do |row|
+
+   @check= Information.create(@f => row[@array[@f]] , @s => @final_array.keys[2],@t =>  row[@array[@t]] ,@fo =>  row[@array[@fo]],@fi =>  row[@array[@fi]],@si =>  row[@array[@si]],@se =>  row[@array[@se]],@ei =>  row[@array[@ei]],@ni =>  row[@array[@ni]],@te => row[@array[@te]],@le =>  row[@array[@le]],@twe =>  row[@array[@twe]],@thir =>  row[@array[@thir]],@fou =>  row[@array[@fou]],@fif =>  row[@array[@fif]],@six =>  row[@array[@six]],@twenfiv =>  row[@array[@twenfiv]],@twensi =>  row[@array[@twensi]],:user_id => current_user.id,:exel_id => @exel_id)  
+    end
+  flash[:notice] = 'Successfully saved the data'
+  redirect_to (information_index_path(:exel_id => @exel_id, :template_headers => @template_headers))
+   return
+
+ elsif @eigh == "" && @nine == "" && @twenty == "" && @twenone == "" && @twetwo == "" && @twethre == "" && @twenfou == ""
+
+ CSV.foreach(@file.path, :headers => true, :col_sep => ',') do |row|
+
+   @check= Information.create(@f => row[@array[@f]] , @s => @final_array.keys[2],@t =>  row[@array[@t]] ,@fo =>  row[@array[@fo]],@fi =>  row[@array[@fi]],@si =>  row[@array[@si]],@se =>  row[@array[@se]],@ei =>  row[@array[@ei]],@ni =>  row[@array[@ni]],@te => row[@array[@te]],@le =>  row[@array[@le]],@twe =>  row[@array[@twe]],@thir =>  row[@array[@thir]],@fou =>  row[@array[@fou]],@fif =>  row[@array[@fif]],@six =>  row[@array[@six]],@seven =>  row[@array[@seven]],@twenfiv =>  row[@array[@twenfiv]],@twensi =>  row[@array[@twensi]],:user_id => current_user.id,:exel_id => @exel_id)  
+    end
+  flash[:notice] = 'Successfully saved the data'
+  redirect_to (information_index_path(:exel_id => @exel_id, :template_headers => @template_headers))
+   return
+
+elsif  @nine == "" && @twenty == "" && @twenone == "" && @twetwo == "" && @twethre == "" && @twenfou == ""
+  CSV.foreach(@file.path, :headers => true, :col_sep => ',') do |row|
+
+   @check= Information.create(@f => row[@array[@f]] , @s => @final_array.keys[2],@t =>  row[@array[@t]] ,@fo =>  row[@array[@fo]],@fi =>  row[@array[@fi]],@si =>  row[@array[@si]],@se =>  row[@array[@se]],@ei =>  row[@array[@ei]],@ni =>  row[@array[@ni]],@te => row[@array[@te]],@le =>  row[@array[@le]],@twe =>  row[@array[@twe]],@thir =>  row[@array[@thir]],@fou =>  row[@array[@fou]],@fif =>  row[@array[@fif]],@six =>  row[@array[@six]],@seven =>  row[@array[@seven]],@eigh =>  row[@array[@eigh]],@twenfiv =>  row[@array[@twenfiv]],@twensi =>  row[@array[@twensi]],:user_id => current_user.id,:exel_id => @exel_id)  
+    end
+  flash[:notice] = 'Successfully saved the data'
+  redirect_to (information_index_path(:exel_id => @exel_id, :template_headers => @template_headers))
+   return
+
+elsif @twenty == "" && @twenone == "" && @twetwo == "" && @twethre == "" && @twenfou == ""
+ CSV.foreach(@file.path, :headers => true, :col_sep => ',') do |row|
+
+   @check= Information.create(@f => row[@array[@f]] , @s => @final_array.keys[2],@t =>  row[@array[@t]] ,@fo =>  row[@array[@fo]],@fi =>  row[@array[@fi]],@si =>  row[@array[@si]],@se =>  row[@array[@se]],@ei =>  row[@array[@ei]],@ni =>  row[@array[@ni]],@te => row[@array[@te]],@le =>  row[@array[@le]],@twe =>  row[@array[@twe]],@thir =>  row[@array[@thir]],@fou =>  row[@array[@fou]],@fif =>  row[@array[@fif]],@six =>  row[@array[@six]],@seven =>  row[@array[@seven]],@eigh =>  row[@array[@eigh]],@nine =>  row[@array[@nine]],@twenfiv =>  row[@array[@twenfiv]],@twensi =>  row[@array[@twensi]],:user_id => current_user.id,:exel_id => @exel_id)  
+    end
+  flash[:notice] = 'Successfully saved the data'
+  redirect_to (information_index_path(:exel_id => @exel_id, :template_headers => @template_headers))
+   return
+
+elsif @twenone == "" && @twetwo == "" && @twethre == "" && @twenfou == ""
+   
+   CSV.foreach(@file.path, :headers => true, :col_sep => ',') do |row|
+
+   @check= Information.create(@f => row[@array[@f]] , @s => @final_array.keys[2],@t =>  row[@array[@t]] ,@fo =>  row[@array[@fo]],@fi =>  row[@array[@fi]],@si =>  row[@array[@si]],@se =>  row[@array[@se]],@ei =>  row[@array[@ei]],@ni =>  row[@array[@ni]],@te => row[@array[@te]],@le =>  row[@array[@le]],@twe =>  row[@array[@twe]],@thir =>  row[@array[@thir]],@fou =>  row[@array[@fou]],@fif =>  row[@array[@fif]],@six =>  row[@array[@six]],@seven =>  row[@array[@seven]],@eigh =>  row[@array[@eigh]],@nine =>  row[@array[@nine]],@twenty =>  row[@array[@twenty]],@twenfiv =>  row[@array[@twenfiv]],@twensi =>  row[@array[@twensi]],:user_id => current_user.id,:exel_id => @exel_id)  
+    end
+  flash[:notice] = 'Successfully saved the data'
+  redirect_to (information_index_path(:exel_id => @exel_id, :template_headers => @template_headers))
+   return
+
+elsif @twetwo == "" && @twethre == "" && @twenfou == ""
+
+   CSV.foreach(@file.path, :headers => true, :col_sep => ',') do |row|
+
+   @check= Information.create(@f => row[@array[@f]] , @s => @final_array.keys[2],@t =>  row[@array[@t]] ,@fo =>  row[@array[@fo]],@fi =>  row[@array[@fi]],@si =>  row[@array[@si]],@se =>  row[@array[@se]],@ei =>  row[@array[@ei]],@ni =>  row[@array[@ni]],@te => row[@array[@te]],@le =>  row[@array[@le]],@twe =>  row[@array[@twe]],@thir =>  row[@array[@thir]],@fou =>  row[@array[@fou]],@fif =>  row[@array[@fif]],@six =>  row[@array[@six]],@seven =>  row[@array[@seven]],@eigh =>  row[@array[@eigh]],@nine =>  row[@array[@nine]],@twenty =>  row[@array[@twenty]],@twenone =>  row[@array[@twenone]],@twenfiv =>  row[@array[@twenfiv]],@twensi =>  row[@array[@twensi]],:user_id => current_user.id,:exel_id => @exel_id)  
+    end
+  flash[:notice] = 'Successfully saved the data'
+  redirect_to (information_index_path(:exel_id => @exel_id, :template_headers => @template_headers))
+   return
+
+ elsif @twethre == "" && @twenfou == ""
+
+  CSV.foreach(@file.path, :headers => true, :col_sep => ',') do |row|
+
+   @check= Information.create(@f => row[@array[@f]] , @s => @final_array.keys[2],@t =>  row[@array[@t]] ,@fo =>  row[@array[@fo]],@fi =>  row[@array[@fi]],@si =>  row[@array[@si]],@se =>  row[@array[@se]],@ei =>  row[@array[@ei]],@ni =>  row[@array[@ni]],@te => row[@array[@te]],@le =>  row[@array[@le]],@twe =>  row[@array[@twe]],@thir =>  row[@array[@thir]],@fou =>  row[@array[@fou]],@fif =>  row[@array[@fif]],@six =>  row[@array[@six]],@seven =>  row[@array[@seven]],@eigh =>  row[@array[@eigh]],@nine =>  row[@array[@nine]],@twenty =>  row[@array[@twenty]],@twenone =>  row[@array[@twenone]],@twetwo =>  row[@array[@twetwo]],@twenfiv =>  row[@array[@twenfiv]],@twensi =>  row[@array[@twensi]],:user_id => current_user.id,:exel_id => @exel_id)  
+    end
+  flash[:notice] = 'Successfully saved the data'
+  redirect_to (information_index_path(:exel_id => @exel_id, :template_headers => @template_headers))
+   return
+elsif @twenfou == ""
+ CSV.foreach(@file.path, :headers => true, :col_sep => ',') do |row|
+
+   @check= Information.create(@f => row[@array[@f]] , @s => @final_array.keys[2],@t =>  row[@array[@t]] ,@fo =>  row[@array[@fo]],@fi =>  row[@array[@fi]],@si =>  row[@array[@si]],@se =>  row[@array[@se]],@ei =>  row[@array[@ei]],@ni =>  row[@array[@ni]],@te => row[@array[@te]],@le =>  row[@array[@le]],@twe =>  row[@array[@twe]],@thir =>  row[@array[@thir]],@fou =>  row[@array[@fou]],@fif =>  row[@array[@fif]],@six =>  row[@array[@six]],@seven =>  row[@array[@seven]],@eigh =>  row[@array[@eigh]],@nine =>  row[@array[@nine]],@twenty =>  row[@array[@twenty]],@twenone =>  row[@array[@twenone]],@twetwo =>  row[@array[@twetwo]],@twethre =>  row[@array[@twethre]],@twenfiv =>  row[@array[@twenfiv]],@twensi =>  row[@array[@twensi]],:user_id => current_user.id,:exel_id => @exel_id)  
+    end
+  flash[:notice] = 'Successfully saved the data'
+  redirect_to (information_index_path(:exel_id => @exel_id, :template_headers => @template_headers))
+   return
+
 else
 
    CSV.foreach(@file.path, :headers => true, :col_sep => ',') do |row|
 
-   @check= Information.create(@f => row[@array[@f]] , @s => @final_array.keys[2],@t =>  row[@array[@t]] ,@fo =>  row[@array[@fo]],@fi =>  row[@array[@fi]],@si =>  row[@array[@si]],@se =>  row[@array[@se]],@ei =>  row[@array[@ei]],@ni =>  row[@array[@ni]],@te => row[@array[@te]],@le =>  row[@array[@le]],@twe =>  row[@array[@twe]],@thir =>  row[@array[@thir]],@fou =>  row[@array[@fou]],@fif =>  row[@array[@fif]],@six =>  row[@array[@six]],@seven =>  row[@array[@seven]],@eigh =>  row[@array[@eigh]],@nine =>  row[@array[@nine]],@twenty =>  row[@array[@twenty]],@twenone =>  row[@array[@twenone]],@twetwo =>  row[@array[@twetwo]],@twethre =>  row[@array[@twethre]],@twenfou =>  row[@array[@twenfou]],@twenfiv =>  row[@array[@twenfiv]],@twensi =>  row[@array[@twensi]],:user_id => current_user.id,:exel_id => @exel_id)  
+   @check= Information.create(@f => row[@array[@f]] , @s => @final_array.keys[2],@t =>  row[@array[@t]] ,@fo =>  row[@array[@fo]],@fi =>  row[@array[@fi]],@si =>  row[@array[@si]],@se =>  row[@array[@se]],@ei =>  row[@array[@ei]],@ni =>  row[@array[@ni]],@te => row[@array[@te]],@le =>  row[@array[@le]],@twe =>  row[@array[@twe]],@thir =>  row[@array[@thir]],@fou =>  row[@array[@fou]],@fif =>  row[@array[@fif]],@six =>  row[@array[@six]],@seven =>  row[@array[@seven]],@eigh =>  row[@array[@eigh]],@nine =>  row[@array[@nine]],@twenty =>  row[@array[@twenty]],@twenone =>  row[@array[@twenone]],@twetwo =>  row[@array[@twetwo]],@twethre =>  row[@array[@twethre]],@twenfou =>  row[@array[@twenfou]],@twenfiv =>  row[@array[@twenfiv]],@twensi =>  row[@array[@twensi]],:user_id => current_user.id,:exel_id => @exel_id, :created_at => Time.now.day )  
     end
   flash[:notice] = 'Successfully saved the data'
-  redirect_to information_index_path(:exel_id => @exel_id, :template_headers => @template_headers)
-   
+  redirect_to (information_index_path(:exel_id => @exel_id, :template_headers => @template_headers))
+   return
 end
 end
   # GET /information/1

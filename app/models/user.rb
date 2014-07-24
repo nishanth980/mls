@@ -11,4 +11,5 @@ class User < ActiveRecord::Base
 
   has_one :role
   has_many :information
+  has_many :templates
 end

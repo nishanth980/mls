@@ -5,28 +5,40 @@
 </div>
 <% @time=DateTime.now.day %>
 <% if current_user.role.present? && current_user.role.name=="admin"%>
-<table class="table table-striped">
+<% @date = Date.today  %>  
+<b><u> Upload Details of <%= @date.strftime("%B")%><%= @date.strftime("%Y")%> </u></b>
+<div  style="height:500px; width:100%; overflow:auto">
+<table class="table table-striped" border="1">
   <thead>
     <tr>
       <th>Name</th>
-      <th>Email</th>
-      <th>Phone Number</th>
-      <th>Users who haven't uploaded Csv</th> 
+      <th>Email</th>      
+      <th>Csv Details</th> 
     </tr>
   </thead>
   <tbody>
     <% @users.each do |user| %>
-    <% @in = Information.find(:last, :conditions => ["user_id = ?", "#{user.id}"]) %>
-      <tr>
+    <% user.templates %>        
+ <% @arr = [] %>
+<% @in = Information.where('created_at BETWEEN ? AND ? AND user_id=?',  "#{DateTime.now.in_time_zone.beginning_of_month.day}", "#{DateTime.now.in_time_zone.end_of_month.day}", "#{user.id}")
+  %>
+   <% @in.each { |u| @arr << "#{u.created_at}" }%>
+    <% @uni_val = @arr.uniq %>
+      <tr>        
         <td><%= user.first_name%>&nbsp;<%= user.last_name%></td>
-        <td><%= user.email %></td>
-        <td><%= user.phone_number %> </td>
-        <td><%= user.phone_number %> </td>
-        
+        <td><%= user.email %></td>        
+        <% if @uni_val.present? %>
+        <% @uni_val.each do |time| %>
+        <td>Uploaded on <%= time %>th of this month</td>
+        <% end %>
+        <% else %>
+        <td style="color:red">Data not uploaded</td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
 <% else %>
 <%= link_to "Field Mapping", templates_path%>&nbsp;&nbsp;
 <%= link_to "Data Conversion", information_index_path %>

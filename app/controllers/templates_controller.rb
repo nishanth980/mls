@@ -16,8 +16,13 @@ class TemplatesController < ApplicationController
     
   @template = Template.find_by_user_id("#{current_user.id}")     
   @template.delete if @template.present?  
-  @file = params[:file]  
-  @data = CSV.read @file.path     
+  @file = params[:file]   
+  quote_chars = %w(" | ~ ^ & *)
+  begin
+  @data = CSV.read( @file.path, quote_char: quote_chars.shift )
+  rescue CSV::MalformedCSVError
+  quote_chars.empty? ? raise : retry     
+  end
   @@csv_data= @data[0]  
   
   redirect_to combined_form_templates_path(:csv_data =>  @@csv_data)

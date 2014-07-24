@@ -11,7 +11,7 @@
 	
 	<% @m.each do |i| %>
 	<div class="test">
-<p><%= text_field_tag "tab_#{c}", "#{i.name}" ,:id=>"tab_#{c}", :readonly => "true" %>&nbsp;<%= select_tag "temp_#{c}",options_for_select(@x.collect {|val| val}),:prompt =>"please select a value",:id=>"temp_#{c}" %> </p>
+<p><%= text_field_tag "tab_#{c}", "#{i.name}" ,:id=>"tab_#{c}" %>&nbsp;<%= select_tag "temp_#{c}",options_for_select(@x.collect {|val| val}),:prompt =>"please select a value",:id=>"temp_#{c}" %> </p>
 
 <% c= c+1 %>
 </div>

@@ -5,7 +5,7 @@
 		    <% @mname = MasterTable.find(9) %>
 		    <% @m.delete(@mname) %>
 	<%= form_tag save_form_templates_path(@pio),:method => :post, :id => "template_form" do %>
-	<%= @mname.mandidatory_fields %><%= text_field_tag "mls_name", @mname.name %> <%= text_field_tag "mls_name_user" %> 
+	<div style="color:red"><%= @mname.mandidatory_fields %></div><%= text_field_tag "mls_name", @mname.name %> <%= text_field_tag "mls_name_user" %> 
 	<% c= 1 %>
 	<% while c <= @m.count do %>
 	

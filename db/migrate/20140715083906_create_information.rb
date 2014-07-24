@@ -29,7 +29,7 @@ class CreateInformation < ActiveRecord::Migration
       t.string :agent_remarks
       t.string :user_id
       t.string :exel_id
-
+      t.string :created_at
     end
   end
 end

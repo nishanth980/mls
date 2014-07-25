@@ -6,6 +6,7 @@
   <%= submit_tag "Import" %>
 <% end %>
 <h4 style="color:red"> <%= notice %>  </h4>
+<% if @information.present? %>
 <h4> Converted Data </h4>
 <div class="data_table">
 <table>
@@ -68,9 +69,10 @@
    </tr>
    <% end %>
 </table>
-<h2><%= link_to "Download as csv", export_information_index_path(format: "csv") %></h2>
 </div>
-
+<h2><%= link_to "Download as csv", export_information_index_path(format: "csv") %></h2>
+<% end %>
+<% if @errors.present? %>
 <h5> The following rows are missing data and are not saved</h5>
 <div class="data_table">
 <table>
@@ -134,7 +136,7 @@
    <% end %>
 </table>
 </div>
-
+<% end %>
 
 </div>
 </div>

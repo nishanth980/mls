@@ -70,6 +70,70 @@
 </table>
 </div>
 
+<h5> The following rows are missing data and are not saved</h5>
+<div class="data_table">
+<table>
+  <tr>
+  <th>Mls Id</th>
+  <th>Mls Name</th>
+  <th>Sale Type</th>
+  <th>listing_status</th>
+  <th>apn</th>
+  <th>address</th>
+  <th>suite</th>
+  <th>street</th>
+  <th>street_name</th>
+  <th>city</th>
+  <th>state</th>
+  <th>zip</th>
+  <th>sale_date</th>
+  <th>sale_price</th>
+  <th>concession_amount</th>
+  <th>owner</th>
+  <th>days_on_market</th>
+  <th>original_listing_price</th>
+  <th>original_listing_date</th>
+  <th>current_listing_price</th>
+  <th>current_listing_date</th>
+  <th>contact_date</th>
+  <th>financing_type</th>
+  <th>listing_status_date</th>
+  <th>public_remarks</th>
+  <th>agent_remarks</th>
+   </tr>
+   <% @errors.each do |data| %>
+   <tr>
+    <td><%= data.mls_id %></td>
+    <td><%= data.mls_name %></td>
+    <td><%= data.sale_type %></td>
+    <td><%= data.listing_status %></td>
+    <td><%= data.apn %></td>
+    <td><%= data.address %></td>
+    <td><%= data.suite %></td>
+    <td><%= data.street %></td>
+    <td><%= data.street_name %></td>
+    <td><%= data.city %></td>
+    <td><%= data.state %></td>
+    <td><%= data.zip %></td>
+    <td><%= data.sale_date %></td>
+    <td><%= data.sale_price %></td>
+    <td><%= data.concession_amount %></td>
+    <td><%= data.owner %></td>
+    <td><%= data.days_on_market %></td>
+    <td><%= data.original_listing_price %></td>
+    <td><%= data.original_listing_date %></td>
+    <td><%= data.current_listing_price %></td>
+    <td><%= data.current_listing_date %></td>
+    <td><%= data.contact_date %></td>
+    <td><%= data.financing_type %></td>
+    <td><%= data.listing_status_date %></td>
+    <td><%= data.public_remarks %></td>
+    <td><%= data.agent_remarks %></td>
+   </tr>
+   <% end %>
+</table>
+</div>
+
 <h2><%= link_to "Download as csv", export_information_index_path(format: "csv") %></h2>
 </div>
 </div>

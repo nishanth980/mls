@@ -68,6 +68,7 @@
    </tr>
    <% end %>
 </table>
+<h2><%= link_to "Download as csv", export_information_index_path(format: "csv") %></h2>
 </div>
 
 <h5> The following rows are missing data and are not saved</h5>
@@ -134,7 +135,7 @@
 </table>
 </div>
 
-<h2><%= link_to "Download as csv", export_information_index_path(format: "csv") %></h2>
+
 </div>
 </div>
 

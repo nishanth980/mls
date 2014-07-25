@@ -4,7 +4,7 @@ class InformationController < ApplicationController
   def index  
     @@exel_id = params[:exel_id]
     @information = Information.where(:exel_id => @@exel_id, :user_id => "#{current_user.id}" )
-    @errors = InformationError.where(:exel_id => "15-2014-07-25 17:50:26 +0530")
+    @errors = InformationError.where(:exel_id => @@exel_id)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @information }

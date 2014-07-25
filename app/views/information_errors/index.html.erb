@@ -1,0 +1,21 @@
+<h1>Listing information_errors</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @information_errors.each do |information_error| %>
+  <tr>
+    <td><%= link_to 'Show', information_error %></td>
+    <td><%= link_to 'Edit', edit_information_error_path(information_error) %></td>
+    <td><%= link_to 'Destroy', information_error, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Information error', new_information_error_path %>

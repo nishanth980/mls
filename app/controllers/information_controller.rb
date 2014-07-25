@@ -4,7 +4,7 @@ class InformationController < ApplicationController
   def index  
     @@exel_id = params[:exel_id]
     @information = Information.where(:exel_id => @@exel_id, :user_id => "#{current_user.id}" )
-
+    @errors = InformationError.where(:exel_id => "15-2014-07-25 17:50:26 +0530")
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @information }
@@ -162,12 +162,14 @@ def import
   else
   @first_column << ""
   end
+
  
   @f,@s,@t,@fo,@fi,@si,@se,@ei,@ni,@te,@le,@twe,@thir,@fou,@fif,@six,@seven,@eigh,@nine,@twenty,@twenone,@twetwo,@twethre,@twenfou,@twenfiv,@twensi=@first_column[0],@first_column[1],@first_column[2],@first_column[3],@first_column[4],@first_column[5],@first_column[6],@first_column[7],@first_column[8],@first_column[9],@first_column[10],@first_column[11],@first_column[12],@first_column[13],@first_column[14],@first_column[15],@first_column[16],@first_column[17],@first_column[18],@first_column[19],@first_column[20],@first_column[21],@first_column[22],@first_column[23],@first_column[24],@first_column[25]
 
 @time = Time.now
 @exel_id = current_user.id.to_s + "-" + @time.to_s
        
+       debugger
 if @fi == "" && @fif == "" && @six == "" && @seven == "" && @eigh == "" && @nine == "" && @twenty == "" && @twenone == "" && @twetwo == "" && @twethre == "" && @twenfou == "" && @twenfiv == "" && @twensi == "" 
 
  CSV.foreach(@file.path, :headers => true, :col_sep => ',') do |row|
@@ -510,8 +512,12 @@ elsif @twenfou == ""
 else
 
    CSV.foreach(@file.path, :headers => true, :col_sep => ',') do |row|
-
+   if row[@array[@f]] != nil && row[@array[@t]] != nil && row[@array[@fo]]!=nil && row[@array[@fou]]!= nil && row[@array[@si]]!= nil && row[@array[@se]]!= nil && row[@array[@ei]]!= nil && row[@array[@ni]]!= nil && row[@array[@te]]!= nil && row[@array[@le]]!= nil && row[@array[@twe]]!= nil && row[@array[@thir]]!= nil
+   
    @check= Information.create(@f => row[@array[@f]] , @s => @final_array.keys[2],@t =>  row[@array[@t]] ,@fo =>  row[@array[@fo]],@fi =>  row[@array[@fi]],@si =>  row[@array[@si]],@se =>  row[@array[@se]],@ei =>  row[@array[@ei]],@ni =>  row[@array[@ni]],@te => row[@array[@te]],@le =>  row[@array[@le]],@twe =>  row[@array[@twe]],@thir =>  row[@array[@thir]],@fou =>  row[@array[@fou]],@fif =>  row[@array[@fif]],@six =>  row[@array[@six]],@seven =>  row[@array[@seven]],@eigh =>  row[@array[@eigh]],@nine =>  row[@array[@nine]],@twenty =>  row[@array[@twenty]],@twenone =>  row[@array[@twenone]],@twetwo =>  row[@array[@twetwo]],@twethre =>  row[@array[@twethre]],@twenfou =>  row[@array[@twenfou]],@twenfiv =>  row[@array[@twenfiv]],@twensi =>  row[@array[@twensi]],:user_id => current_user.id,:exel_id => @exel_id, :created_at => Time.now.day )  
+    else
+       @check= InformationError.create(@f => row[@array[@f]] , @s => @final_array.keys[2],@t =>  row[@array[@t]] ,@fo =>  row[@array[@fo]],@fi =>  row[@array[@fi]],@si =>  row[@array[@si]],@se =>  row[@array[@se]],@ei =>  row[@array[@ei]],@ni =>  row[@array[@ni]],@te => row[@array[@te]],@le =>  row[@array[@le]],@twe =>  row[@array[@twe]],@thir =>  row[@array[@thir]],@fou =>  row[@array[@fou]],@fif =>  row[@array[@fif]],@six =>  row[@array[@six]],@seven =>  row[@array[@seven]],@eigh =>  row[@array[@eigh]],@nine =>  row[@array[@nine]],@twenty =>  row[@array[@twenty]],@twenone =>  row[@array[@twenone]],@twetwo =>  row[@array[@twetwo]],@twethre =>  row[@array[@twethre]],@twenfou =>  row[@array[@twenfou]],@twenfiv =>  row[@array[@twenfiv]],@twensi =>  row[@array[@twensi]],:user_id => current_user.id,:exel_id => @exel_id, :created_at => Time.now.day )  
+    end
     end
   flash[:notice] = 'Successfully saved the data'
   redirect_to (information_index_path(:exel_id => @exel_id, :template_headers => @template_headers))

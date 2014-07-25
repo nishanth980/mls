@@ -1,0 +1,2 @@
+module InformationErrorsHelper
+end

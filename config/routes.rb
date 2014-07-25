@@ -2,6 +2,9 @@ Mls::Application.routes.draw do
 
 
 
+  resources :information_errors
+
+
   resources :information do
   collection { post :import }
   collection { get :export }

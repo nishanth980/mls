@@ -1,6 +1,8 @@
 class InformationController < ApplicationController
   # GET /information
   # GET /information.json
+  before_filter :authenticate_user!
+  
   def index  
     @@exel_id = params[:exel_id]
     @information = Information.where(:exel_id => @@exel_id, :user_id => "#{current_user.id}" )

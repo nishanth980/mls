@@ -1,7 +1,7 @@
 	<div class="wrapper">
 		<div class="temp-con">
 			<div class="temp1-style">				
-			<% @m=MasterTable.all %>
+			<% @m=MasterTable.order('created_at ASC').all %>
 		    <% @mname = MasterTable.find(9) %>
 		    <% @m.delete(@mname) %>
 	<%= form_tag save_form_templates_path(@pio),:method => :post, :id => "template_form" do %>

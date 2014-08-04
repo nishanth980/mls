@@ -2,7 +2,7 @@
 		<div class="temp-con">
 			<div class="temp1-style">				
 			<% @m=MasterTable.order('created_at ASC').all %>
-		    <% @mname = MasterTable.find(9) %>
+		    <% @mname = MasterTable.find(2) %>
 		    <% @m.delete(@mname) %>
 	<%= form_tag save_form_templates_path(@pio),:method => :post, :id => "template_form" do %>
 	<div style="color:red"><%= @mname.mandidatory_fields %></div><%= text_field_tag "mls_name", @mname.name %> <%= text_field_tag "mls_name_user" %> 

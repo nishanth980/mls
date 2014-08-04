@@ -177,8 +177,12 @@ def import
 @exel_id = current_user.id.to_s + "-" + @time.to_s
        
        
-
-   CSV.foreach(@file.path, :headers => true, :col_sep => ',') do |row|
+quote_chars = %w(" | ~ ^ & *)
+begin
+   CSV.foreach(@file.path, :headers => true, quote_char: quote_chars.shift, :col_sep => ',') do |row|
+rescue CSV::MalformedCSVError
+  quote_chars.empty? ? raise : retry     
+end
 
    if row[@array[@f]] != nil && row[@array[@t]] != nil && row[@array[@fo]]!=nil && row[@array[@fou]]!= nil && row[@array[@si]]!= nil && row[@array[@se]]!= nil && row[@array[@ei]]!= nil && row[@array[@ni]]!= nil && row[@array[@te]]!= nil && row[@array[@le]]!= nil && row[@array[@twe]]!= nil && row[@array[@thir]]!= nil
 

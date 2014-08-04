@@ -13,9 +13,14 @@ class InformationController < ApplicationController
     end
   end
 
-def import
+def import  
   @file = params[:file]  
-  @csv_data = CSV.read @file.path  
+  quote_chars = %w(" | ~ ^ & *)
+  begin
+  @csv_data = CSV.read( @file.path, quote_char: quote_chars.shift )
+  rescue CSV::MalformedCSVError
+  quote_chars.empty? ? raise : retry
+  end
   @data_headers = @csv_data[0]     
   @template_headers=Template.find_by_user_id("#{current_user.id}")    
   @template_headers.attributes.each{|i| @a = i}

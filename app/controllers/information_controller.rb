@@ -177,9 +177,9 @@ def import
 @exel_id = current_user.id.to_s + "-" + @time.to_s
        
        
-
+  begin
    CSV.foreach(@file.path, :headers => true, :col_sep => ',') do |row|
-
+ 
    if row[@array[@f]] != nil && row[@array[@t]] != nil && row[@array[@fo]]!=nil && row[@array[@fou]]!= nil && row[@array[@si]]!= nil && row[@array[@se]]!= nil && row[@array[@ei]]!= nil && row[@array[@ni]]!= nil && row[@array[@te]]!= nil && row[@array[@le]]!= nil && row[@array[@twe]]!= nil && row[@array[@thir]]!= nil
 
 @val = {}.merge( @f!="" ? { @f => row[@array[@f]] } : {}).merge( @s!="" ? {@s => @final_array.keys[2]} : {}).merge( @t!="" ? {@t =>  row[@array[@t]]} : {}).merge( @fo!="" ? {@fo => row[@array[@fo]]} : {}).merge( @fi != "" ? {@fi =>  row[@array[@fi]]} : {}).merge(@si != "" ? {@si =>  row[@array[@si]]} : {}).merge(@se != "" ? {@se =>  row[@array[@se]]} : {}).merge(@ei!="" ? {@ei =>  row[@array[@ei]]} : {}).merge(@ni !="" ? {@ni =>  row[@array[@ni]]} : {}).merge(@te!="" ? {@te => row[@array[@te]]} : {}).merge(@le!="" ? {@le =>  row[@array[@le]]} : {}).merge(@twe!="" ? {@twe =>  row[@array[@twe]]} : {}).merge(@thir!="" ? {@thir =>  row[@array[@thir]]} : {}).merge(@fou!=""  ? {@fou =>  row[@array[@fou]]} : {}).merge(@fif!="" ? {@fif =>  row[@array[@fif]]} : {}).merge(@six!="" ? {@six =>  row[@array[@six]]} : {}).merge(@seven!="" ? {@seven =>  row[@array[@seven]]} : {}).merge(@eigh!="" ? {@eigh =>  row[@array[@eigh]]} : {}).merge(@nine!="" ? {@nine =>  row[@array[@nine]]} : {}).merge(@twenty!=""  ? {@twenty =>  row[@array[@twenty]]} : {}).merge(@twenone!="" ? {@twenone =>  row[@array[@twenone]]} : {}).merge(@twetwo!="" ? {@twetwo =>  row[@array[@twetwo]]} : {}).merge(@twethre!="" ? {@twethre =>  row[@array[@twethre]]} : {}).merge(@twenfou!="" ? {@twenfou =>  row[@array[@twenfou]]} : {}).merge(@twenfiv!="" ? {@twenfiv =>  row[@array[@twenfiv]]} : {}).merge(@twensi!="" ? {@twensi =>  row[@array[@twensi]]} : {}).merge({:user_id => current_user.id}).merge({:exel_id => @exel_id}).merge({:exel_id => @exel_id}).merge({:created_at => Time.now.day})
@@ -192,6 +192,8 @@ def import
        @check= InformationError.create(@f => row[@array[@f]] , @s => @final_array.keys[2],@t =>  row[@array[@t]] ,@fo =>  row[@array[@fo]],@fi =>  row[@array[@fi]],@si =>  row[@array[@si]],@se =>  row[@array[@se]],@ei =>  row[@array[@ei]],@ni =>  row[@array[@ni]],@te => row[@array[@te]],@le =>  row[@array[@le]],@twe =>  row[@array[@twe]],@thir =>  row[@array[@thir]],@fou =>  row[@array[@fou]],@fif =>  row[@array[@fif]],@six =>  row[@array[@six]],@seven =>  row[@array[@seven]],@eigh =>  row[@array[@eigh]],@nine =>  row[@array[@nine]],@twenty =>  row[@array[@twenty]],@twenone =>  row[@array[@twenone]],@twetwo =>  row[@array[@twetwo]],@twethre =>  row[@array[@twethre]],@twenfou =>  row[@array[@twenfou]],@twenfiv =>  row[@array[@twenfiv]],@twensi =>  row[@array[@twensi]],:user_id => current_user.id,:exel_id => @exel_id, :created_at => Time.now.day )  
     end
     end
+    rescue CSV::MalformedCSVError => e
+   end
   flash[:notice] = 'Successfully saved the data'
   redirect_to (information_index_path(:exel_id => @exel_id, :template_headers => @template_headers))
    return

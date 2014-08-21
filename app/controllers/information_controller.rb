@@ -175,7 +175,7 @@ def import
 
 @time = Time.now
 @exel_id = current_user.id.to_s + "-" + @time.to_s
-quote_chars = %w(" | ~ ^ & *)       
+quote_chars = %w(" | ~ ^ & * " ")       
        
   begin
    CSV.foreach(@file.path,:headers => true,:col_sep => ',',:quote_char => quote_chars.shift) do |row|
@@ -185,7 +185,7 @@ quote_chars = %w(" | ~ ^ & *)
 @val = {}.merge( @f!="" ? { @f => row[@array[@f]] } : {}).merge( @s!="" ? {@s => @final_array.keys[2]} : {}).merge( @t!="" ? {@t =>  row[@array[@t]]} : {}).merge( @fo!="" ? {@fo => row[@array[@fo]]} : {}).merge( @fi != "" ? {@fi =>  row[@array[@fi]]} : {}).merge(@si != "" ? {@si =>  row[@array[@si]]} : {}).merge(@se != "" ? {@se =>  row[@array[@se]]} : {}).merge(@ei!="" ? {@ei =>  row[@array[@ei]]} : {}).merge(@ni !="" ? {@ni =>  row[@array[@ni]]} : {}).merge(@te!="" ? {@te => row[@array[@te]]} : {}).merge(@le!="" ? {@le =>  row[@array[@le]]} : {}).merge(@twe!="" ? {@twe =>  row[@array[@twe]]} : {}).merge(@thir!="" ? {@thir =>  row[@array[@thir]]} : {}).merge(@fou!=""  ? {@fou =>  row[@array[@fou]]} : {}).merge(@fif!="" ? {@fif =>  row[@array[@fif]]} : {}).merge(@six!="" ? {@six =>  row[@array[@six]]} : {}).merge(@seven!="" ? {@seven =>  row[@array[@seven]]} : {}).merge(@eigh!="" ? {@eigh =>  row[@array[@eigh]]} : {}).merge(@nine!="" ? {@nine =>  row[@array[@nine]]} : {}).merge(@twenty!=""  ? {@twenty =>  row[@array[@twenty]]} : {}).merge(@twenone!="" ? {@twenone =>  row[@array[@twenone]]} : {}).merge(@twetwo!="" ? {@twetwo =>  row[@array[@twetwo]]} : {}).merge(@twethre!="" ? {@twethre =>  row[@array[@twethre]]} : {}).merge(@twenfou!="" ? {@twenfou =>  row[@array[@twenfou]]} : {}).merge(@twenfiv!="" ? {@twenfiv =>  row[@array[@twenfiv]]} : {}).merge(@twensi!="" ? {@twensi =>  row[@array[@twensi]]} : {}).merge({:user_id => current_user.id}).merge({:exel_id => @exel_id}).merge({:exel_id => @exel_id}).merge({:created_at => Time.now.day})
 
  @check= Information.create(@val)
-    
+
     
      
     else
